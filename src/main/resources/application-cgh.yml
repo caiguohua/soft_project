@@ -1,0 +1,24 @@
+spring:
+  profiles: cgh
+  datasource:
+      #mysql8驱动
+      #driver-class-name: com.mysql.cj.jdbc.Driver
+
+      #mysql5驱动
+    diiver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3307/soft?characterEncoding=UTF-8
+    username: root
+    password: 123456
+
+logging:
+  config: classpath:logback-local.xml
+  path: logs
+
+
+#  redis:
+#    database: 0
+#    host:
+#    port:
+#    password:
+#    lettuce:
+#      shutdown-timeout: 0ms

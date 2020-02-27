@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: soft
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    prefix: "soft:"
+    lettuce:
+      pool:
+        #最大等待时间
+        max-wait: 10000ms
+        #最小空闲数量
+        min-idle: 5
+        #最大空闲数量
+        max-active: 1000
+    timeout: 5000ms
+
+server:
+  port: 8080
+  servlet:
+    context-path: /soft
+
+mybatis:
+  type-aliases-package: com.net.soft.model
+  mapper-locations: classpath:mapping/*.xml
