@@ -16,6 +16,14 @@ spring:
         max-active: 1000
     timeout: 5000ms
 
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    cache: false
+
+
 server:
   port: 8080
   servlet:
