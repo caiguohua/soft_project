@@ -11,8 +11,9 @@ import lombok.Data;
 public class SoftException extends RuntimeException {
     private Integer code;
 
-    public SoftException( Integer code ,String message) {
+    public SoftException(Integer code ,String message) {
         super(message);
         this.code = code;
     }
+
 }
