@@ -6,9 +6,9 @@ spring:
 
     #mysql5驱动
     diiver-class-name: com.mysql.jdbc.Driver
-    url:
-    username:
-    password:
+    url: jdbc:mysql://127.0.0.1:3306/soft?characterEncoding=UTF-8
+    username: root
+    password: qazwsxedc
 
 
 #  redis:
@@ -17,4 +17,4 @@ spring:
 #    port:
 #    password:
 #    lettuce:
-#      shutdown-timeout: 0ms
+#    shutdown-timeout: 0ms
