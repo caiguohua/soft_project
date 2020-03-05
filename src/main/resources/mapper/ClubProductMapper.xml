@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.net.soft.mapper.ClubProductMapper">
+    <resultMap id="BaseResultMap" type="com.net.soft.model.ClubProductDO">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="c_id" property="cid" jdbcType="INTEGER" />
+        <result column="p_name" property="name" jdbcType="VARCHAR" />
+        <result column="p_desc" property="desc" jdbcType="VARCHAR" />
+        <result column="p_price" property="price" jdbcType="DECIMAL" />
+        <result column="date_unit" property="dateUnit" jdbcType="INTEGER" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <insert id="insertData" parameterType="com.net.soft.model.ClubProductDO">
+        insert into club_product (c_id, p_name, p_desc, p_price, date_unit)
+        values
+        (#{record.cid},#{record.name},#{record.desc},#{record.price},#{record.dateUnit})
+    </insert>
+
+    <update id="updateData" parameterType="com.net.soft.model.ClubProductDO">
+        update club_product
+        <set>
+            <if test="record.cid != null">
+                c_id = #{record.cid},
+            </if>
+            <if test="record.name != null">
+                p_name = #{record.name},
+            </if>
+            <if test="record.desc != null">
+                p_desc = #{record.desc},
+            </if>
+
+            <if test="record.price != null">
+                p_price = #{record.price},
+            </if>
+            <if test="record.dateUnit != null">
+                date_unit = #{record.dateUnit}
+            </if>
+        </set>
+        where id = #{record.id}
+    </update>
+
+    <update id="deleteData" parameterType="java.lang.Integer">
+        update club_info set is_valid = 0 where id = #{id} and is_valid = 1
+    </update>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select id,c_id,p_name,p_desc,p_price,date_unit,create_time,update_timefrom club_product where is_valid = 1
+    </select>
+</mapper>

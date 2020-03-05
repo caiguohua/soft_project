@@ -2,6 +2,7 @@ package com.net.soft.model;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
@@ -15,9 +16,9 @@ public class ClubProductDO {
     private Integer cid;
     private String name;
     private String desc;
-    private String price;
-    private String dateUnit;
-    private Date starTime;
-    private Date endTime;
+    private BigDecimal price;
+    private Integer dateUnit;
     private Boolean isvalid;
+    private Date createTime;
+    private Date updateTime;
 }

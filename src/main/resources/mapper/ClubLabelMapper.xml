@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.net.soft.mapper.ClubLabelMapper">
+    <resultMap id="BaseResultMap" type="com.net.soft.model.ClubLabelDO">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="labelName" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <insert id="insertData" parameterType="com.net.soft.model.ClubLabelDO">
+        insert into club_label (name)
+        values
+        (#{record.name})
+    </insert>
+    <update id="updateData" parameterType="com.net.soft.model.ClubLabelDO">
+        update club_label
+        <set>
+            <if test="record.name != null">
+                name = #{record.name}
+            </if>
+        </set>
+        where id = #{record.id}
+    </update>
+
+    <update id="deleteData" parameterType="java.lang.Integer">
+        update club_label set is_valid = 0 where id = #{id} and is_valid = 1
+    </update>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select id,name,create_time,update_time from club_label where is_valid = 1
+    </select>
+</mapper>

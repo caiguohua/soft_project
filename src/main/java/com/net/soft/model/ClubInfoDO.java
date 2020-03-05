@@ -2,6 +2,8 @@ package com.net.soft.model;
 
 import lombok.Data;
 
+import java.sql.Date;
+
 /**
  * club_info 实体类
  *
@@ -16,8 +18,10 @@ public class ClubInfoDO {
     private String description;
     private String phone;
     private String address;
-    private String cover_image;
+    private String coverImage;
     private String comments;
     private Integer sequence;
     private Boolean isvalid;
+    private Date createTime;
+    private Date updateTime;
 }

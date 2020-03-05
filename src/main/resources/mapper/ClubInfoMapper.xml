@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.net.soft.mapper.ClubInfoMapper">
+    <resultMap id="BaseResultMap" type="com.net.soft.model.ClubInfoDO">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="cover_image" property="coverImage" jdbcType="VARCHAR" />
+        <result column="sequence" property="sequence" jdbcType="INTEGER" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <insert id="insertData" parameterType="com.net.soft.model.ClubInfoDO">
+        insert into club_info (name, description, phone, address, cover_image, sequence)
+        values
+        (#{record.name},#{record.description},#{record.phone},#{record.address},#{record.coverImage},#{record.sequence})
+    </insert>
+
+    <update id="deleteData" parameterType="java.lang.Integer">
+        update club_info set is_valid = 0 where id = #{id} and is_valid = 1
+    </update>
+
+    <update id="updateData" parameterType="com.net.soft.model.ClubInfoDO">
+        update club_info
+        <set>
+            <if test="record.name != null">
+                name = #{record.name},
+            </if>
+            <if test="record.description != null">
+                description = #{record.description},
+            </if>
+            <if test="record.phone != null">
+                phone = #{record.phone},
+            </if>
+            <if test="record.address != null">
+                address = #{record.address},
+            </if>
+            <if test="record.coverImage != null">
+                cover_image = #{record.coverImage}
+            </if>
+            <if test="record.sequence != null">
+                sequence = #{record.sequence},
+            </if>
+        </set>
+        where id = #{record.id}
+    </update>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select id,name,description,phone,address,cover_image,sequence,create_time,update_time from club_info where is_valid = 1
+    </select>
+</mapper>
