@@ -1,6 +1,7 @@
 package com.net.soft.mapper;
 
 import com.net.soft.model.ClubInfoDO;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -36,6 +37,14 @@ public interface ClubInfoMapper {
     List<ClubInfoDO> findAll();
 
     //ydj
+
+    /**
+     * 根据id查询
+     * @return
+     */
+    ClubInfoDO getCludInfoById(int id);
+
+
 
 }
 

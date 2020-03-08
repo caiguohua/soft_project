@@ -31,11 +31,19 @@ public class ClubInfoServiceImpl implements ClubInfoService {
 
     @Override
     public List<ClubInfoDO> findAll() {
-        return null;
+        return clubInfoMapper.findAll();
     }
 
     @Override
     public ClubInfoDO findOne() {
         return null;
     }
+
+    @Override
+    public ClubInfoDO findClubInfoById(int id) {
+
+        return clubInfoMapper.getCludInfoById(id);
+
+    }
+
 }

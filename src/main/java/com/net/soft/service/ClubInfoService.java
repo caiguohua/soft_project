@@ -18,4 +18,6 @@ public interface ClubInfoService {
     List<ClubInfoDO> findAll();
 
     ClubInfoDO findOne();
+
+    ClubInfoDO findClubInfoById(int id);
 }

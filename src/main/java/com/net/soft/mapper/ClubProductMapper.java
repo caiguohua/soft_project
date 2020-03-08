@@ -1,6 +1,7 @@
 package com.net.soft.mapper;
 
 import com.net.soft.model.ClubProductDO;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
