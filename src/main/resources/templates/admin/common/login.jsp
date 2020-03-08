@@ -4,7 +4,7 @@
 <!DOCTYPE html>
  
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="static/css/style2.css" />
+<link rel="stylesheet" type="text/css" href="static/css/style_2.css" />
 
  
 <div class="workingroom">
