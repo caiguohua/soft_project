@@ -60,4 +60,9 @@
         AND
         is_valid = 1
     </select>
+    <select id="getClubInfoByLabel" resultType="com.net.soft.model.ClubInfoDO">
+        SELECT * FROM club_info WHERE club_info.id IN
+        (SELECT c_id FROM info_label WHERE l_id = #{labelId})
+    </select>
+
 </mapper>

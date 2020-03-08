@@ -18,5 +18,5 @@ public interface ClubLabelService {
 
     List<ClubLabelDO> findAll();
 
-    ClubLabelDO findOne();
+    //ClubLabelDO findOne();
 }

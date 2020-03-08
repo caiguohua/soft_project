@@ -17,7 +17,9 @@ public interface ClubInfoService {
 
     List<ClubInfoDO> findAll();
 
-    ClubInfoDO findOne();
+    //ClubInfoDO findOne();
 
     ClubInfoDO findClubInfoById(int id);
+
+    List<ClubInfoDO> getClubInfoByLabel(int labelId);
 }

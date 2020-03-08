@@ -19,7 +19,6 @@ public class ClubInfoDO {
     private String phone;
     private String address;
     private String coverImage;
-    private String comments;
     private Integer sequence;
     private Boolean isvalid;
     private Date createTime;

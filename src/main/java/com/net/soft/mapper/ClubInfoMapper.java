@@ -44,6 +44,13 @@ public interface ClubInfoMapper {
      */
     ClubInfoDO getCludInfoById(int id);
 
+    /**
+     * 根据标签id查询
+     * @param labelId
+     * @return
+     */
+    List<ClubInfoDO> getClubInfoByLabel(int labelId);
+
 
 
 }

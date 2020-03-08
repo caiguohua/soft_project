@@ -1,8 +1,9 @@
 package com.net.soft.service.impl;
 
-import com.net.soft.model.ClubInfoDO;
+import com.net.soft.mapper.ClubLabelMapper;
 import com.net.soft.model.ClubLabelDO;
 import com.net.soft.service.ClubLabelService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,10 @@ import java.util.List;
  */
 @Service
 public class ClubLabelServiceImpl implements ClubLabelService {
+
+    @Autowired
+    ClubLabelMapper clubLabelMapper;
+
     @Override
     public void add(ClubLabelDO clubLabelDO) {
 
@@ -26,11 +31,11 @@ public class ClubLabelServiceImpl implements ClubLabelService {
 
     @Override
     public List<ClubLabelDO> findAll() {
-        return null;
+        return clubLabelMapper.findAll();
     }
 
-    @Override
-    public ClubLabelDO findOne() {
-        return null;
-    }
+//    @Override
+//    public ClubLabelDO findOne() {
+//        return null;
+//    }
 }
