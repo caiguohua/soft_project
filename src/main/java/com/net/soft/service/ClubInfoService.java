@@ -21,6 +21,9 @@ public interface ClubInfoService {
 
     void delete(Integer id);
 
+    //ydj
+
+
     ClubInfoDO findClubInfoById(int id);
 
     List<ClubInfoDO> getClubInfoByLabel(int labelId);

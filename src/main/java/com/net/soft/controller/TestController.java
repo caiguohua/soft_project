@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
-    @Autowired
-    private ClubInfoService clubInfoService;
+
     @GetMapping("/test")
     public Object test(@RequestParam("id") Integer id){
         if(id == 0){
