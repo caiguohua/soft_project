@@ -63,4 +63,18 @@
         and
         id = #{id}
     </select>
+
+    <select id="getCludInfoById" resultType="com.net.soft.model.ClubInfoDO">
+        SELECT id,name,description,phone,address,cover_image,sequence,create_time,update_time
+        FROM club_info
+        WHERE
+        id = #{id}
+        AND
+        is_valid = 1
+    </select>
+    <select id="getClubInfoByLabel" resultType="com.net.soft.model.ClubInfoDO">
+        SELECT * FROM club_info WHERE club_info.id IN
+        (SELECT c_id FROM info_label WHERE l_id = #{labelId})
+    </select>
+
 </mapper>

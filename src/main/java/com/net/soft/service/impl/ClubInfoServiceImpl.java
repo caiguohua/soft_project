@@ -8,7 +8,6 @@ import com.net.soft.service.ClubInfoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -71,4 +70,17 @@ public class ClubInfoServiceImpl implements ClubInfoService {
             logger.error("delete clubInfo: ",id+" is error,errorMessage:[{}],errorStackTrace:[{}]",e.getMessage(),e.getStackTrace());
         }
     }
+    @Override
+    public ClubInfoDO findClubInfoById(int id) {
+
+        return clubInfoMapper.getCludInfoById(id);
+
+    }
+
+    @Override
+    public List<ClubInfoDO> getClubInfoByLabel(int labelId) {
+        return clubInfoMapper.getClubInfoByLabel(labelId);
+    }
+
+
 }

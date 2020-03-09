@@ -1,6 +1,5 @@
 package com.net.soft.service;
 
-import com.net.soft.model.ClubInfoDO;
 import com.net.soft.model.ClubLabelDO;
 
 import java.util.List;

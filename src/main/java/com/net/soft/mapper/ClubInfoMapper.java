@@ -1,6 +1,7 @@
 package com.net.soft.mapper;
 
 import com.net.soft.model.ClubInfoDO;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -45,6 +46,21 @@ public interface ClubInfoMapper {
     ClubInfoDO findOne(@Param("id") Integer id);
 
     //ydj
+
+    /**
+     * 根据id查询
+     * @return
+     */
+    ClubInfoDO getCludInfoById(int id);
+
+    /**
+     * 根据标签id查询
+     * @param labelId
+     * @return
+     */
+    List<ClubInfoDO> getClubInfoByLabel(int labelId);
+
+
 
 }
 
