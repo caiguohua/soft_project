@@ -60,4 +60,9 @@ public class AdminController {
     public ModelAndView index(Map<String, Object> map) {
         return new ModelAndView("admin/common/index", map);
     }
+
+    @GetMapping("/userIndex")
+    public ModelAndView userIndex(Map<String, Object> map) {
+        return new ModelAndView("user/index", map);
+    }
 }
