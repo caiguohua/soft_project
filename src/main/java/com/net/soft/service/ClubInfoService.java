@@ -1,6 +1,7 @@
 package com.net.soft.service;
 
 import com.net.soft.model.ClubInfoDO;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -15,7 +16,9 @@ public interface ClubInfoService {
 
     void update(ClubInfoDO clubInfoDO);
 
-    List<ClubInfoDO> findAll();
+    List<ClubInfoDO> findAll(Integer page,Integer size);
 
-    ClubInfoDO findOne();
+    ClubInfoDO findOne(Integer id);
+
+    void delete(Integer id);
 }

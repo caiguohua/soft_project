@@ -27,10 +27,10 @@ html {
   transition: all 0.5s ease;
 }
 #wrapper.toggled {
-  padding-left: 180px;
+  padding-left: 200px;
 }
 #wrapper.toggled #sidebar-wrapper {
-  width: 180px;
+  width: 200px;
 }
 #sidebar-wrapper {
   -moz-transition: all 0.5s ease;

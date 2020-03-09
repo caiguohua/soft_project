@@ -35,6 +35,20 @@ public interface ClubProductMapper {
      */
     List<ClubProductDO> findAll();
 
+    /**
+     * 通过cid查询
+     * @param cid
+     * @return
+     */
+    List<ClubProductDO> findByCid(Integer cid);
+
+    /**
+     * 通过id查询
+     * @param id
+     * @return
+     */
+    ClubProductDO findById(Integer id);
+
     //ydj
 
 }

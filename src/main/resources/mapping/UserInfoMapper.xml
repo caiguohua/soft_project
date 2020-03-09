@@ -10,8 +10,8 @@
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     </resultMap>
-    <insert id="insertData" parameterType="com.net.soft.model.UserInfoDO">
 
+    <insert id="insertData" parameterType="com.net.soft.model.UserInfoDO">
         insert into user_info (phone,name, password,type)
         values
         (#{record.phone},#{record.name},#{record.password},#{record.type})
@@ -21,23 +21,23 @@
         update user_info
         <set>
             <if test="record.phone != null">
-                phone = #{record.phone}
+                phone = #{record.phone},
             </if>
             <if test="record.name != null">
-                name = #{record.name}
+                name = #{record.name},
             </if>
             <if test="record.password != null">
-                password = #{record.password}
+                password = #{record.password},
             </if>
             <if test="record.type != null">
-                type = #{record.type}
+                type = #{record.type},
             </if>
         </set>
-        where id = #{record.id}
+        where id = #{record.id} and is_valid = 1
     </update>
 
     <update id="deleteData" parameterType="java.lang.Integer">
-        update club_info set is_valid = 0 where id = #{id} and is_valid = 1
+        update user_info set is_valid = 0 where id = #{id} and is_valid = 1
     </update>
 
     <select id="findAll" resultMap="BaseResultMap">

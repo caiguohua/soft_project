@@ -19,4 +19,12 @@ public interface ClubLabelService {
     List<ClubLabelDO> findAll();
 
     ClubLabelDO findOne();
+
+    ClubLabelDO findById(Integer id);
+
+    void delete(Integer id);
+
+    List<ClubLabelDO> findByCid(Integer cid);
+
+    List<ClubLabelDO> findNotHasByCid(Integer cid);
 }

@@ -8,13 +8,14 @@
         <result column="p_desc" property="desc" jdbcType="VARCHAR" />
         <result column="p_price" property="price" jdbcType="DECIMAL" />
         <result column="date_unit" property="dateUnit" jdbcType="INTEGER" />
+        <result column="p_sum" property="sum" jdbcType="INTEGER" />
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     </resultMap>
     <insert id="insertData" parameterType="com.net.soft.model.ClubProductDO">
-        insert into club_product (c_id, p_name, p_desc, p_price, date_unit)
+        insert into club_product (c_id, p_name, p_desc, p_price, date_unit, p_sum)
         values
-        (#{record.cid},#{record.name},#{record.desc},#{record.price},#{record.dateUnit})
+        (#{record.cid},#{record.name},#{record.desc},#{record.price},#{record.dateUnit},#{record.sum})
     </insert>
 
     <update id="updateData" parameterType="com.net.soft.model.ClubProductDO">
@@ -34,17 +35,32 @@
                 p_price = #{record.price},
             </if>
             <if test="record.dateUnit != null">
-                date_unit = #{record.dateUnit}
+                date_unit = #{record.dateUnit},
+            </if>
+            <if test="record.sum != null">
+                p_sum = #{record.sum}
             </if>
         </set>
-        where id = #{record.id}
+        where id = #{record.id} and is_valid = 1
     </update>
 
     <update id="deleteData" parameterType="java.lang.Integer">
-        update club_info set is_valid = 0 where id = #{id} and is_valid = 1
+        update club_product set is_valid = 0 where id = #{id} and is_valid = 1
     </update>
 
     <select id="findAll" resultMap="BaseResultMap">
-        select id,c_id,p_name,p_desc,p_price,date_unit,create_time,update_timefrom club_product where is_valid = 1
+        select id,c_id,p_name,p_desc,p_price,date_unit,p_sum,create_time,update_time from club_product where is_valid = 1
+    </select>
+    <select id="findByCid" resultMap="BaseResultMap">
+        select id,c_id,p_name,p_desc,p_price,date_unit,p_sum,create_time,update_time
+        from club_product
+        where is_valid = 1
+        and c_id = #{cid}
+    </select>
+    <select id="findById" resultMap="BaseResultMap">
+        select id,c_id,p_name,p_desc,p_price,date_unit,p_sum,create_time,update_time
+        from club_product
+        where is_valid = 1
+        and id = #{id}
     </select>
 </mapper>

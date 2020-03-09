@@ -17,6 +17,7 @@
         insert into club_info (name, description, phone, address, cover_image, sequence)
         values
         (#{record.name},#{record.description},#{record.phone},#{record.address},#{record.coverImage},#{record.sequence})
+        on duplicate key update phone = values(phone) and is_valid = 1
     </insert>
 
     <update id="deleteData" parameterType="java.lang.Integer">
@@ -39,16 +40,27 @@
                 address = #{record.address},
             </if>
             <if test="record.coverImage != null">
-                cover_image = #{record.coverImage}
+                cover_image = #{record.coverImage},
             </if>
             <if test="record.sequence != null">
-                sequence = #{record.sequence},
+                sequence = #{record.sequence}
             </if>
         </set>
-        where id = #{record.id}
+        where id = #{record.id} and is_valid = 1
     </update>
 
     <select id="findAll" resultMap="BaseResultMap">
-        select id,name,description,phone,address,cover_image,sequence,create_time,update_time from club_info where is_valid = 1
+        select id,name,description,phone,address,cover_image,sequence,create_time,update_time
+        from club_info
+        where
+        is_valid = 1
+    </select>
+    <select id="findOne" resultMap="BaseResultMap">
+        select id,name,description,phone,address,cover_image,sequence,create_time,update_time
+        from club_info
+        where
+        is_valid = 1
+        and
+        id = #{id}
     </select>
 </mapper>

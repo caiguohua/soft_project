@@ -35,5 +35,19 @@ public interface ClubLabelMapper {
      */
     List<ClubLabelDO> findAll();
 
+    /**
+     * 通过会所id查找对应的标签
+     * @param cid
+     * @return
+     */
+    List<ClubLabelDO> findByCid(@Param("cid") Integer cid);
+
+    /**
+     * 通过id查询
+     * @param id
+     * @return
+     */
+    ClubLabelDO findById(Integer id);
+
     //ydj
 }

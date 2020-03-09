@@ -6,7 +6,7 @@ spring:
 
       #mysql5驱动
     diiver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3307/soft?characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/soft?characterEncoding=UTF-8
     username: root
     password: 123456
 

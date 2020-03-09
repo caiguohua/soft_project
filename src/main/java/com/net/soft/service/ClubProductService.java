@@ -1,7 +1,5 @@
 package com.net.soft.service;
 
-import com.net.soft.model.ClubInfoDO;
-import com.net.soft.model.ClubLabelDO;
 import com.net.soft.model.ClubProductDO;
 
 import java.util.List;
@@ -17,7 +15,11 @@ public interface ClubProductService {
 
     void update(ClubProductDO clubProductDO);
 
-    List<ClubProductDO> findAll();
+    List<ClubProductDO> findAll(Integer page,Integer size);
 
-    ClubProductDO findOne();
+    List<ClubProductDO> findByCid(Integer cid,Integer page,Integer size);
+
+    void delete(Integer id);
+
+    ClubProductDO findById(Integer id);
 }

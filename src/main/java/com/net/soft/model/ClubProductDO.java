@@ -3,7 +3,8 @@ package com.net.soft.model;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
+
 
 /**
  * @author caiguohua
@@ -18,6 +19,7 @@ public class ClubProductDO {
     private String desc;
     private BigDecimal price;
     private Integer dateUnit;
+    private Integer sum;
     private Boolean isvalid;
     private Date createTime;
     private Date updateTime;
