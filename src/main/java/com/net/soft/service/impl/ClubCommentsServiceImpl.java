@@ -35,4 +35,9 @@ public class ClubCommentsServiceImpl implements ClubCommentsService {
     public void delete(Integer id) {
 
     }
+
+    @Override
+    public void add(ClubCommentsDO clubCommentsDO) {
+        clubCommentsMapper.insert(clubCommentsDO);
+    }
 }

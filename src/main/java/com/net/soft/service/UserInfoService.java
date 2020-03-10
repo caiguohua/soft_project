@@ -17,7 +17,7 @@ public interface UserInfoService {
 
     List<UserInfoDO> findAll(Integer page,Integer size);
 
-    UserInfoDO findOne();
+    UserInfoDO findOne(Integer id);
 
     void delete(Integer id);
 }

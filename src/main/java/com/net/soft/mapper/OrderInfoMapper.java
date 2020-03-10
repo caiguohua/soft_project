@@ -39,5 +39,16 @@ public interface OrderInfoMapper {
      */
     void cancelOrder(@Param("id")Integer id);
 
+    /**
+     * 通过id查询
+     * @param id
+     * @return
+     */
     Integer findById(@Param("id")Integer id);
+
+    /**
+     * 创建订单
+     * @param orderInfoDO
+     */
+    void insert(@Param("record") OrderInfoDO orderInfoDO);
 }

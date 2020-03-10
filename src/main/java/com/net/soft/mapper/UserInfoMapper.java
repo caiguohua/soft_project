@@ -36,5 +36,12 @@ public interface UserInfoMapper {
      */
     List<UserInfoDO> findAll();
 
+    /**
+     * 通过id查询
+     * @param id
+     * @return
+     */
+    UserInfoDO findById(@Param("id") Integer id);
+
     //ydj
 }

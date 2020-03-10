@@ -57,6 +57,7 @@
         where is_valid = 1
         and c_id = #{cid}
     </select>
+
     <select id="findById" resultMap="BaseResultMap">
         select id,c_id,p_name,p_desc,p_price,date_unit,p_sum,create_time,update_time
         from club_product

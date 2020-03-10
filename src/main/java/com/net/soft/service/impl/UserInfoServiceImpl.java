@@ -46,8 +46,8 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public UserInfoDO findOne() {
-        return null;
+    public UserInfoDO findOne(Integer id) {
+        return userInfoMapper.findById(id);
     }
 
     @Override

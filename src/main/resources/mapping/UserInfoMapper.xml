@@ -43,4 +43,8 @@
     <select id="findAll" resultMap="BaseResultMap">
         select id,phone,name,password,type,create_time,update_time from user_info where is_valid = 1
     </select>
+
+    <select id="findById" resultMap="BaseResultMap">
+        select id,phone,name,type from user_info where id = #{id} and is_valid = 1
+    </select>
 </mapper>

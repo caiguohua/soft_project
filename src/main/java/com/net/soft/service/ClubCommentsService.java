@@ -13,4 +13,6 @@ public interface ClubCommentsService {
     List<ClubCommentsDO> findByCid(Integer cid,Integer page,Integer size);
 
     void delete(Integer id);
+
+    void add(ClubCommentsDO clubCommentsDO);
 }

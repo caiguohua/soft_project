@@ -39,4 +39,9 @@ public class IndexController {
         return new ModelAndView("user/regedit");
     }
 
+    @GetMapping(value = "/info")
+    public ModelAndView info(){
+        return new ModelAndView("user/info");
+    }
+
 }

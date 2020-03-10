@@ -35,10 +35,16 @@
         update order_info set status = 1 where id = #{id} and is_valid = 1
     </update>
 
-
     <update id="cancelOrder" parameterType="java.lang.Integer">
         update order_info set status = 2 where id = #{id} and is_valid = 1
     </update>
+
+    <insert id="insert" parameterType="com.net.soft.model.OrderInfoDO">
+        insert into order_info ( u_id, u_name, u_phone, p_id, p_name, p_price,p_date_unit)
+        values
+        (#{record.uid},#{record.userName},#{record.userPhone},#{record.pid},#{record.productName},#{record.productPrice},#{record.dateUnit})
+    </insert>
+
 
 
 </mapper>

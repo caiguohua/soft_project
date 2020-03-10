@@ -14,5 +14,9 @@
     <update id="deleteData" parameterType="java.lang.Integer">
         update club_comments set is_valid = 0 where id = #{id} and is_valid = 1
     </update>
+    <insert id="insert" parameterType="com.net.soft.model.ClubCommentsDO">
+        insert into club_comments ( c_id, comment) values (#{record.cid},#{record.comment});
+    </insert>
+
 
 </mapper>

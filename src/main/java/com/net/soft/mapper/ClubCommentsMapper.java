@@ -13,4 +13,5 @@ import java.util.List;
 public interface ClubCommentsMapper {
     List<ClubCommentsDO> findByCid(@Param("cid") Integer cid);
     void deleteData(@Param("id") Integer id);
+    void insert(@Param("record") ClubCommentsDO clubCommentsDO);
 }
