@@ -2,45 +2,84 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
 
     <meta http-equiv="imagetoolbar" content="no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="format-detection" content="telephone=no,email=no,address=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>会所套餐</title>
+    <title>会所套餐</title>
 
-  <!-- css -->
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/MyPaging.css">
+
+    <script src="../../static/js/jquery.min3.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .main1 {
+            margin: 0 auto;
+            padding: 50px 0;
+            width: 1000px;
+            min-height: 1000px;
+        }
+        table {
+            margin-bottom: 20px;
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+        }
+        table th, table td {
+            padding: 5px 10px;
+            border-color: #999;
+        }
+    </style>
+
+
+    <link rel="stylesheet" type="text/css" href="../../static/css/font-awesome.min1.css">
+    <link rel="stylesheet" href="../../static/css/jquery.paginate1.css" />
+    <link rel="stylesheet" href="../../static/css/jquery.yhhDataTable1.css" />
+
+    <script type="text/javascript" src="../../static/js/jquery.min2.js"></script>
+    <script type="text/javascript" src="../../static/js/jquery.paginate1.js" ></script>
+    <script type="text/javascript" src="../../static/js/jquery.yhhDataTable1.js" ></script>
+    <script type="text/javascript" src="../../static/js/index1.js" ></script>
+
+
     <link rel="stylesheet" href="../../static/css/easyhelper.min.css">
     <link rel="stylesheet" type="text/css" href="../../static/css/resets.css" />
     <link rel="stylesheet" type="text/css" href="../../static/css/default.css">
-	<link href="../../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../static/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../static/css/reset.css" rel="stylesheet">
-<link href="../../static/css/spxq.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="../../static/js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="../../static/js/chanping.js"></script>
-  <link href="../../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="plugins/cubeportfolio/css/cubeportfolio.min.css">
-  <link href="../../static/css/nivo-lightbox.css" rel="stylesheet" />
-  <link href="../../static/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-  <link href="../../static/css/owl.carousel.css" rel="stylesheet" media="screen" />
-  <link href="../../static/css/owl.theme.css" rel="stylesheet" media="screen" />
-  <link href="../../static/css/animate.css" rel="stylesheet" />
-  <link href="../../static/css/style_2.css" rel="stylesheet">
+    <link href="../../static/css/spxq.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../../static/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../static/js/chanping.js"></script>
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="plugins/cubeportfolio/css/cubeportfolio.min.css">
+    <link href="../../static/css/nivo-lightbox.css" rel="stylesheet" />
+    <link href="../../static/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../static/css/owl.carousel.css" rel="stylesheet" media="screen" />
+    <link href="../../static/css/owl.theme.css" rel="stylesheet" media="screen" />
+    <link href="../../static/css/animate.css" rel="stylesheet" />
+    <link href="../../static/css/style.css" rel="stylesheet">
     <script src="../../static/js/xml.js"></script>
     <script src="../../static/js/es6-shim.min.js"></script>
     <script src="../../static/js/jquery-3.3.1.min.js"></script>
     <script src="../../static/js/jquery.transit.min.js"></script>
     <script src="../../static/js/easyhelper.min.js"></script>
-  <!-- boxed bg -->
-  <link id="bodybg" href="../../static/bodybg/bg1.css" rel="stylesheet" type="text/css" />
-  <!-- template skin -->
-  <link id="t-colors" href="../../static/color/default.css" rel="stylesheet">
+    <!-- boxed bg -->
+    <link id="bodybg" href="../../static/bodybg/bg1.css" rel="stylesheet" type="text/css" />
+    <!-- template skin -->
+    <link id="t-colors" href="../../static/color/default.css" rel="stylesheet">
 
     <style>
         .main{
@@ -125,332 +164,341 @@
 
 <div class="clear"></div>
 <!--a-->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-      <div class="top-area">
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="top-area">
         <div class="container">
-          <div class="row">
-            <div class="col-sm-6 col-md-6">
-              <p class="bold text-left">24小时竭诚为您服务 </p>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <p class="bold text-left">24小时竭诚为您服务 </p>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <p class="bold text-right">24小时热线电话 +86 1438438</p>
+                </div>
             </div>
-            <div class="col-sm-6 col-md-6">
-              <p class="bold text-right">24小时热线电话 +86 1438438</p>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="container navigation">
+    </div>
+    <div class="container navigation">
 
         <div class="navbar-header page-scroll">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-          <a class="navbar-brand" href="index.html">
-                    <img src="../../static/img/logo.png" alt="" width="150" height="40" />
-                </a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="" width="150" height="40" />
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">首页</a></li>
-            <li><a href="Introduction.html">会所介绍</a></li>
-            <li><a href="西安套餐.html">套餐介绍</a></li>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">首页</a></li>
+                <li><a href="Introduction.html">会所介绍</a></li>
+                <li><a href="西安套餐.html">套餐介绍</a></li>
 
-            <!这里进行登陆的跳转><li><a href="login.html">登录</a></li>
-            <!这里进行注册的跳转><li><a href="regedit.html">注册</a></li>
-          
-          </ul>
+                <!这里进行登陆的跳转><li><a href="login.html">登录</a></li>
+                <!这里进行注册的跳转><li><a href="regedit.html">注册</a></li>
+
+            </ul>
         </div>
         <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-    </nav>
-   <div>
+    </div>
+    <!-- /.container -->
+</nav>
+<div>
     <ul>
 
-      <br>
-		 <br>
-		 <br>
-		 <br>
-		 <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
 
 
     </ul>
-    </div>
+</div>
 <br>
 
 <!--	  套餐内容-->
-	  <div class="conbox">
-		<div class="c-top">
-			<div class="c-top-l">
-			<img src="../../static/img/beijing/中图.jpg" width="400px" height="380px" >
-			<img src="../../static/img/beijing/小图1.jpg" width="152px" height="152px">
-			<img src="../../static/img/beijing/小图2.jpg" width="152px" height="152px">
-			<img src="../../static/img/beijing/小图3.jpg" width="152px" height="152px">
-			</div>
-		  <div class="c-top-r" >
-              <h3 style="color: #2B3444">西安MEDICIO月子中心<br><small>Woodland Vidal Premium Icewine</small></h3>
-                <p style="color: #2B3444">公司地址 ：陕西省西安市子午大道</p>
-                <ol style="list-style: none;">
-                    <li style="color: #2B3444">套餐A ：真切的关怀、真诚的呵护。<br>A套餐，开启精致月子之旅 价格：￥1000</li>
-                    <br>
-                    <li style="color: #2B3444">套餐B ：纯纯馨爱意、沁沁抚你心。<br>B套餐，打造温暖月子生活 价格：￥1200</li>
-                    <br>
-                    <li style="color: #2B3444">套餐C ：一样的情怀、别致的宠爱。<br>C套餐，欢度舒适月子之旅 价格：￥1400</li>
-                    <br>
-                    <li style="color: #2B3444">套餐D ：尊贵馨体验、缤纷馨蜜月。<br>D套餐，尽享豪华月子假期 价格：￥1600</li>
-                    <br>
-                    <li style="color: #2B3444">产前服务 ：免费提供孕期健康咨询，专属就医绿色通道</li>
-                    <li style="color: #2B3444">咨询热线 ：400-881-1616</li>
-                </ol>
-<!--				<h3 style="color: #2B3444">西安MEDICIO月子中心<br><small>Woodland Vidal Premium Icewine</small></h3>-->
-<!--				<p style="color: #2B3444"><small>公司地址 ：陕西省西安市子午大道</small></p>-->
-<!--			    <p style="color: #2B3444"><small>套餐A ：真切的关怀、真诚的呵护。A套餐，开启精致月子之旅</small></p>-->
-<!--				<p style="color: #2B3444"><small>套餐B ：纯纯馨爱意、沁沁抚你心。B套餐，打造温暖月子生活</small></p>-->
-<!--				<p style="color: #2B3444"><small>套餐C ：一样的情怀、别致的宠爱。C套餐，欢度舒适月子之旅</small></p>-->
-<!--				<p style="color: #2B3444"><small>套餐D ：尊贵馨体验、缤纷馨蜜月。D套餐，尽享豪华月子假期</small></p>-->
-<!--				<p style="color: #2B3444"><small>产前服务 ：免费提供孕期健康咨询，专属就医绿色通道</small></p>-->
-<!--			  <p style="color: #2B3444"><small>咨询热线 ：400-881-1616</small></p>-->
-<!--			  	<h3 style="color: #2B3444">价格：￥1000</h3>-->
-<!--			  	<ul class="xznf">-->
-<!--			  		选择类型：-->
-<!--			  		<li class="xznfhover">套餐A</li>-->
-<!--			  		<li>套餐B</li>-->
-<!--			  		<li>套餐C</li>-->
-<!--			  	</ul>-->
-              <ul class="xznf">
-                  选择功能：
-                  <button class="helper-button-info" id="dialog-success">预约</button>
+<div class="conbox">
+    <div class="c-top">
+        <div class="c-top-l">
+            <img src="../../static/img/beijing/中图.jpg" width="400px" height="380px" >
+            <img src="../../static/img/beijing/小图1.jpg" width="152px" height="152px">
+            <img src="../../static/img/beijing/小图2.jpg" width="152px" height="152px">
+            <img src="../../static/img/beijing/小图3.jpg" width="152px" height="152px">
+        </div>
+        <div class="c-top-r" >
+            <h3 style="color: #2B3444">西安MEDICIO月子中心<br><small>Woodland Vidal Premium Icewine</small></h3>
+            <p style="color: #2B3444">公司地址 ：陕西省西安市子午大道</p>
+            <ol style="list-style: none;">
+                <li style="color: #2B3444">套餐A ：真切的关怀、真诚的呵护。<br>A套餐，开启精致月子之旅 价格：￥1000</li>
+                <br>
+                <li style="color: #2B3444">套餐B ：纯纯馨爱意、沁沁抚你心。<br>B套餐，打造温暖月子生活 价格：￥1200</li>
+                <br>
+                <li style="color: #2B3444">套餐C ：一样的情怀、别致的宠爱。<br>C套餐，欢度舒适月子之旅 价格：￥1400</li>
+                <br>
+                <li style="color: #2B3444">套餐D ：尊贵馨体验、缤纷馨蜜月。<br>D套餐，尽享豪华月子假期 价格：￥1600</li>
+                <br>
+                <li style="color: #2B3444">产前服务 ：免费提供孕期健康咨询，专属就医绿色通道</li>
+                <li style="color: #2B3444">咨询热线 ：400-881-1616</li>
+            </ol>
+            <!--				<h3 style="color: #2B3444">西安MEDICIO月子中心<br><small>Woodland Vidal Premium Icewine</small></h3>-->
+            <!--				<p style="color: #2B3444"><small>公司地址 ：陕西省西安市子午大道</small></p>-->
+            <!--			    <p style="color: #2B3444"><small>套餐A ：真切的关怀、真诚的呵护。A套餐，开启精致月子之旅</small></p>-->
+            <!--				<p style="color: #2B3444"><small>套餐B ：纯纯馨爱意、沁沁抚你心。B套餐，打造温暖月子生活</small></p>-->
+            <!--				<p style="color: #2B3444"><small>套餐C ：一样的情怀、别致的宠爱。C套餐，欢度舒适月子之旅</small></p>-->
+            <!--				<p style="color: #2B3444"><small>套餐D ：尊贵馨体验、缤纷馨蜜月。D套餐，尽享豪华月子假期</small></p>-->
+            <!--				<p style="color: #2B3444"><small>产前服务 ：免费提供孕期健康咨询，专属就医绿色通道</small></p>-->
+            <!--			  <p style="color: #2B3444"><small>咨询热线 ：400-881-1616</small></p>-->
+            <!--			  	<h3 style="color: #2B3444">价格：￥1000</h3>-->
+            <!--			  	<ul class="xznf">-->
+            <!--			  		选择类型：-->
+            <!--			  		<li class="xznfhover">套餐A</li>-->
+            <!--			  		<li>套餐B</li>-->
+            <!--			  		<li>套餐C</li>-->
+            <!--			  	</ul>-->
+            <ul class="xznf">
+                选择功能：
+                <button class="helper-button-info" id="dialog-success">预约</button>
 
-                  <script>
+                <script>
 
-                      $( "#dialog-success" ).on("click", function () {
-                          Helper.ui.dialogSuccess( "提示：", "预约成功！" );
-                      })
-                  </script>
+                    $( "#dialog-success" ).on("click", function () {
+                        Helper.ui.dialogSuccess( "提示：", "预约成功！" );
+                    })
+                </script>
 
-              </ul>
-			  	<div class="scbox">
-					<i class="fa fa-heart-o shoucan" aria-hidden="true"></i>
-					<i class="fa fa-heart shoucan2" aria-hidden="true"></i>
+            </ul>
+            <div class="scbox">
+                <i class="fa fa-heart-o shoucan" aria-hidden="true"></i>
+                <i class="fa fa-heart shoucan2" aria-hidden="true"></i>
 
-			  	</div>
-				<div class="fxbox">
-					<i class="fa fa-heart-o shoucan" aria-hidden="true"></i>
-					<i class="fa fa-heart shoucan2" aria-hidden="true"></i>
-
-			  	</div>
-			  	<br>
-			  	<p style="clear: both; color: #666666;font-size:14px; line-height: 40px;">温馨提醒：不影响二次销售支持退货</p>
-			</div>
-		</div>
-		<div class="c-bottom" >
-			<ul class="c-b-nav" style="background-color: #5A5A5A">
-				<li>会所详情</li>
-				<li>会所评价</li>
-
-			</ul>
-			<div class="xqnr">
-				<p class="xqwz" style="color: #3c3c3c">在MEDICIO和宝宝一起探索新的故事 <br>
-					对于每一位妈妈来说，从怀孕到宝宝的诞生，开启了人生新的探索。<br>
-					在MEDICIO，我们追求极致的服务与科学的孕产管理，让每一位妈妈都在这人生重要的转折点，找到更美丽、更自信的自己。<br>
-					以最轻松最美丽的姿态，与宝宝共同踏上生命征程，体验新生命的成长与感动<br>
-					好的月子环境能让一家人心情都愉悦，给妈妈最好的，给宝宝最好的，让爸爸放心，让婆婆安心。<br>
-					五星酒店式月子会所，带给你一个五星级的体验；不只是国际五星酒店的月子环境 更是每一次用心服务
-				</p>
-				<center><img src="img/beijing/大图.jpg" width="75%" ></center>
-			</div>
-
-            <body id="body">
-            <div class="sppj hide">
-
-                <span>发表您对该会所的评价：</span>
-                <span class="tag">您最多可以输入30个字符</span>
-                <textarea id="text" cols="30" rows="10" maxlength="30" class="text"></textarea><br>
-                <input type="button" value="发 表" id="ipt">
-                <div id="txt" >
-
-
-                </div>
             </div>
-            <div style="text-align:center;">
-            </div>
-            </body>
-            <script>
-                var ipt = document.getElementById("ipt");
-                var txt = document.getElementById('txt');
-                var textarea = document.getElementById("text");
-                ipt.onclick = function(){
-                    var textValue = textarea.value.LTrim();
-                    textarea.value="";
-                    if(textValue.length>0 ){
-                        var divs = document.createElement("div");
-                        var imgs = document.createElement("img");
-                        var ps = document.createElement("p");
-                        var inputs = document.createElement("input");
-                        divs.setAttribute("class","creatediv");
-                        imgs.setAttribute('class',"createimg");
-                        ps.setAttribute("class","createdivs");
-                        inputs.setAttribute("class","createinput");
-                        imgs.src="img/1.jpg";
-                        inputs.type="button";
-                        inputs.value="删除";
-                        ps.innerHTML=textValue;
-                        divs.appendChild(imgs);
-                        divs.appendChild(ps);
-                        divs.appendChild(inputs);
-                        if(txt.children.length==0){
-                            txt.appendChild(divs);
+            <div class="fxbox">
+                <i class="fa fa-heart-o shoucan" aria-hidden="true"></i>
+                <i class="fa fa-heart shoucan2" aria-hidden="true"></i>
 
-                        }else{
-                            txt.insertBefore(divs,get_firstChild(txt))
-                        }
-                        inputs.onclick = function(){
-                            this.parentNode.parentNode.removeChild(this.parentNode)
-                        }
+            </div>
+            <br>
+            <p style="clear: both; color: #666666;font-size:14px; line-height: 40px;">温馨提醒：不影响二次销售支持退货</p>
+        </div>
+    </div>
+    <div class="c-bottom" >
+        <ul class="c-b-nav" style="background-color: #5A5A5A">
+            <li>会所详情</li>
+            <li>会所评价</li>
+
+        </ul>
+        <div class="xqnr">
+            <table border>
+                <thead>
+                <tr>
+                    <th>套餐类型</th>
+                    <th>套餐内容</th>
+                    <th>套餐价格</th>
+                </tr>
+                </thead>
+                <tbody class="tbody">
+
+                </tbody>
+            </table>
+
+            <div class="box2"></div>
+            <center><img src="../../static/img/beijing/大图.jpg" width="75%" ></center>
+        </div>
+        <script src="../../static/js/MyPaging.js"></script>
+        <script src="../../static/js/script.js"></script>
+
+        <body id="body">
+        <div class="sppj hide">
+
+            <span>发表您对该会所的评价：</span>
+            <span class="tag">您最多可以输入30个字符</span>
+            <textarea id="text" cols="30" rows="10" maxlength="30" class="text"></textarea><br>
+            <input type="button" value="发 表" id="ipt">
+            <div id="txt" >
+
+
+            </div>
+        </div>
+        <div style="text-align:center;">
+        </div>
+        </body>
+        <script>
+            var ipt = document.getElementById("ipt");
+            var txt = document.getElementById('txt');
+            var textarea = document.getElementById("text");
+            ipt.onclick = function(){
+                var textValue = textarea.value.LTrim();
+                textarea.value="";
+                if(textValue.length>0 ){
+                    var divs = document.createElement("div");
+                    var imgs = document.createElement("img");
+                    var ps = document.createElement("p");
+                    var inputs = document.createElement("input");
+                    divs.setAttribute("class","creatediv");
+                    imgs.setAttribute('class',"createimg");
+                    ps.setAttribute("class","createdivs");
+                    inputs.setAttribute("class","createinput");
+                    imgs.src="img/1.jpg";
+                    inputs.type="button";
+                    inputs.value="删除";
+                    ps.innerHTML=textValue;
+                    divs.appendChild(imgs);
+                    divs.appendChild(ps);
+                    divs.appendChild(inputs);
+                    if(txt.children.length==0){
+                        txt.appendChild(divs);
+
+                    }else{
+                        txt.insertBefore(divs,get_firstChild(txt))
                     }
-
-
-
+                    inputs.onclick = function(){
+                        this.parentNode.parentNode.removeChild(this.parentNode)
+                    }
                 }
-            </script>
+
+
+
+            }
+        </script>
 
 
 
 
- <footer>
+        <footer>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="wow fadeInDown" data-wow-delay="0.1s">
-              <div class="widget">
-                <h5>会所宗旨</h5>
-                <p>
-                  让孕妈感受到家的温暖，让您和孩子拥有健康
-                </p>
-              </div>
-            </div>
-            <div class="wow fadeInDown" data-wow-delay="0.1s">
-              <div class="widget">
-                <h5>会所信息</h5>
-                <ul>
-                  <p>专业团队，为您的健康保驾护航</p>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="wow fadeInDown" data-wow-delay="0.1s">
-              <div class="widget">
-                <h5>会所理念</h5>
-                <p>
-                  让您花最少的钱，享受最优质的服务
-                </p>
-                <ul>
-                  <li>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="wow fadeInDown" data-wow-delay="0.1s">
+                            <div class="widget">
+                                <h5>会所宗旨</h5>
+                                <p>
+                                    让孕妈感受到家的温暖，让您和孩子拥有健康
+                                </p>
+                            </div>
+                        </div>
+                        <div class="wow fadeInDown" data-wow-delay="0.1s">
+                            <div class="widget">
+                                <h5>会所信息</h5>
+                                <ul>
+                                    <p>专业团队，为您的健康保驾护航</p>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="wow fadeInDown" data-wow-delay="0.1s">
+                            <div class="widget">
+                                <h5>会所理念</h5>
+                                <p>
+                                    让您花最少的钱，享受最优质的服务
+                                </p>
+                                <ul>
+                                    <li>
                     <span class="fa-stack fa-lg">
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-calendar-o fa-stack-1x fa-inverse"></i>
 								</span> 24小时竭诚为您服务
-                  </li>
-                  <li>
+                                    </li>
+                                    <li>
                     <span class="fa-stack fa-lg">
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-phone fa-stack-1x fa-inverse"></i>
 								</span> +86 1438438
-                  </li>
-                  <li>
+                                    </li>
+                                    <li>
                     <span class="fa-stack fa-lg">
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
 								</span> yuezihuisuo@163.com
-                  </li>
+                                    </li>
 
-                </ul>
-              </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="wow fadeInDown" data-wow-delay="0.1s">
+                            <div class="widget">
+                                <h5>我们的地址</h5>
+                                <p>陕西省西安市子午大道</p>
+
+                            </div>
+                        </div>
+                        <div class="wow fadeInDown" data-wow-delay="0.1s">
+                            <div class="widget">
+                                <h5>Follow us</h5>
+                                <ul class="company-social">
+                                    <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="social-google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li class="social-vimeo"><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                                    <li class="social-dribble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="wow fadeInDown" data-wow-delay="0.1s">
-              <div class="widget">
-                <h5>我们的地址</h5>
-                <p>陕西省西安市子午大道</p>
 
-              </div>
-            </div>
-            <div class="wow fadeInDown" data-wow-delay="0.1s">
-              <div class="widget">
-                <h5>Follow us</h5>
-                <ul class="company-social">
-                  <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li class="social-google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li class="social-vimeo"><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
-                  <li class="social-dribble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </footer>
 
-    </footer>
+    </div>
+    <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 
-  </div>
-  <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+    <!-- Core JavaScript Files -->
+    <script src="../../static/js/jquery.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <script src="../../static/js/jquery.easing.min.js"></script>
+    <script src="../../static/js/wow.min.js"></script>
+    <script src="../../static/js/jquery.scrollTo.js"></script>
+    <script src="../../static/js/jquery.appear.js"></script>
+    <script src="../../static/js/stellar.js"></script>
+    <script src="plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script src="../../static/js/owl.carousel.min.js"></script>
+    <script src="../../static/js/nivo-lightbox.min.js"></script>
+    <script src="../../static/js/custom.js"></script>
 
-  <!-- Core JavaScript Files -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/jquery.scrollTo.js"></script>
-  <script src="js/jquery.appear.js"></script>
-  <script src="js/stellar.js"></script>
-  <script src="plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/nivo-lightbox.min.js"></script>
-  <script src="js/custom.js"></script>
-
-          <!--/ items -->
+    <!--/ items -->
 
 
-      <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src='js/jquery-ui.min.js'></script>
-      <script type="text/javascript">
-          $('.add-to-cart').on('click', function () {
-              var cart = $('.shopping-cart');
-              var imgtodrag = $(this).parent('.item').find('img').eq(0);
-              if (imgtodrag) {
-                  var imgclone = imgtodrag.clone().offset({
-                      top: imgtodrag.offset().top,
-                      left: imgtodrag.offset().left
-                  }).css({
-                      'opacity': '0.5',
-                      'position': 'absolute',
-                      'height': '150px',
-                      'width': '150px',
-                      'z-index': '100'
-                  }).appendTo($('body')).animate({
-                      'top': cart.offset().top + 10,
-                      'left': cart.offset().left + 10,
-                      'width': 75,
-                      'height': 75
-                  }, 1000, 'easeInOutExpo');
-                  setTimeout(function () {
-                      cart.effect('shake', { times: 2 }, 200);
-                  }, 1500);
-                  imgclone.animate({
-                      'width': 0,
-                      'height': 0
-                  }, function () {
-                      $(this).detach();
-                  });
-              }
-          });
-      </script>
+    <script type="text/javascript" src="../../static/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src='../../static/js/jquery-ui.min.js'></script>
+    <script type="text/javascript">
+        $('.add-to-cart').on('click', function () {
+            var cart = $('.shopping-cart');
+            var imgtodrag = $(this).parent('.item').find('img').eq(0);
+            if (imgtodrag) {
+                var imgclone = imgtodrag.clone().offset({
+                    top: imgtodrag.offset().top,
+                    left: imgtodrag.offset().left
+                }).css({
+                    'opacity': '0.5',
+                    'position': 'absolute',
+                    'height': '150px',
+                    'width': '150px',
+                    'z-index': '100'
+                }).appendTo($('body')).animate({
+                    'top': cart.offset().top + 10,
+                    'left': cart.offset().left + 10,
+                    'width': 75,
+                    'height': 75
+                }, 1000, 'easeInOutExpo');
+                setTimeout(function () {
+                    cart.effect('shake', { times: 2 }, 200);
+                }, 1500);
+                imgclone.animate({
+                    'width': 0,
+                    'height': 0
+                }, function () {
+                    $(this).detach();
+                });
+            }
+        });
+    </script>
 
 </body>
 
