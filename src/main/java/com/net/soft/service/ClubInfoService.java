@@ -15,9 +15,16 @@ public interface ClubInfoService {
 
     void update(ClubInfoDO clubInfoDO);
 
-    List<ClubInfoDO> findAll();
+    List<ClubInfoDO> findAll(Integer page,Integer size);
 
-    ClubInfoDO findOne();
+    ClubInfoDO findOne(Integer id);
+
+    void delete(Integer id);
+
+    //ydj
+
 
     ClubInfoDO findClubInfoById(int id);
+
+    List<ClubInfoDO> getClubInfoByLabel(int labelId);
 }

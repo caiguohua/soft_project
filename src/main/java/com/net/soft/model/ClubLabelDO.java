@@ -2,7 +2,9 @@ package com.net.soft.model;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
+
+import java.util.Objects;
 
 /**
  * @author caiguohua
@@ -16,4 +18,16 @@ public class ClubLabelDO {
     private Boolean isvalid;
     private Date createTime;
     private Date updateTime;
+
+    @Override
+    public boolean equals(Object o) {
+        ClubLabelDO that = (ClubLabelDO) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(labelName, that.labelName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, labelName);
+    }
 }

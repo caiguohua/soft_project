@@ -24,6 +24,14 @@ spring:
     cache: false
 
 
+
+#  mvc:
+#    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/image/
+
+
+
 server:
   port: 8080
   servlet:

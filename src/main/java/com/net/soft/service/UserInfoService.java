@@ -15,7 +15,9 @@ public interface UserInfoService {
 
     void update(UserInfoDO userInfoDO);
 
-    List<UserInfoDO> findAll();
+    List<UserInfoDO> findAll(Integer page,Integer size);
 
     UserInfoDO findOne();
+
+    void delete(Integer id);
 }

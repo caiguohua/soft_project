@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.net.soft.mapper.OrderInfoMapper">
+    <resultMap id="BaseResultMap" type="com.net.soft.model.OrderInfoDO">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="u_id" property="uid" jdbcType="INTEGER" />
+        <result column="u_name" property="userName" jdbcType="VARCHAR" />
+        <result column="u_phone" property="userPhone" jdbcType="VARCHAR" />
+        <result column="p_id" property="pid" jdbcType="INTEGER" />
+        <result column="p_name" property="productName" jdbcType="VARCHAR" />
+        <result column="p_price" property="productPrice" jdbcType="DECIMAL" />
+        <result column="p_date_unit" property="dateUnit" jdbcType="INTEGER" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <select id="findByUid" resultMap="BaseResultMap">
+        select id,u_id,u_name,u_phone,p_id,p_name,p_price,p_date_unit,status,create_time,update_time
+        from order_info
+        where u_id = #{uid} and is_valid = 1
+    </select>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select id,u_id,u_name,u_phone,p_id,p_name,p_price,p_date_unit,status,create_time,update_time
+        from order_info
+        where is_valid = 1
+    </select>
+
+    <select id="findById" resultType="java.lang.Integer">
+        select status from order_info where id = #{id} and is_valid = 1
+    </select>
+
+    <update id="finishOrder" parameterType="java.lang.Integer">
+        update order_info set status = 1 where id = #{id} and is_valid = 1
+    </update>
+
+
+    <update id="cancelOrder" parameterType="java.lang.Integer">
+        update order_info set status = 2 where id = #{id} and is_valid = 1
+    </update>
+
+
+</mapper>

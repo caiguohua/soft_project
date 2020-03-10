@@ -3,6 +3,7 @@ package com.net.soft.mapper;
 import com.net.soft.model.ClubInfoDO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @date 2020/3/3 12:46
  * @Email:cai.beyond@qq.com
  */
+@Repository
 public interface ClubInfoMapper {
     /**
      * 新增
@@ -36,6 +38,13 @@ public interface ClubInfoMapper {
      */
     List<ClubInfoDO> findAll();
 
+    /**
+     * 通过id查询
+     * @param id
+     * @return
+     */
+    ClubInfoDO findOne(@Param("id") Integer id);
+
     //ydj
 
     /**
@@ -43,6 +52,13 @@ public interface ClubInfoMapper {
      * @return
      */
     ClubInfoDO getCludInfoById(int id);
+
+    /**
+     * 根据标签id查询
+     * @param labelId
+     * @return
+     */
+    List<ClubInfoDO> getClubInfoByLabel(int labelId);
 
 
 

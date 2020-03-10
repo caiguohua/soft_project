@@ -3,7 +3,7 @@
 <mapper namespace="com.net.soft.mapper.ClubLabelMapper">
     <resultMap id="BaseResultMap" type="com.net.soft.model.ClubLabelDO">
         <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="name" property="labelName" jdbcType="VARCHAR" />
+        <result column="label_name" property="labelName" jdbcType="VARCHAR" />
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     </resultMap>
@@ -19,7 +19,7 @@
                 name = #{record.name}
             </if>
         </set>
-        where id = #{record.id}
+        where id = #{record.id} and is_valid = 1
     </update>
 
     <update id="deleteData" parameterType="java.lang.Integer">
@@ -27,6 +27,12 @@
     </update>
 
     <select id="findAll" resultMap="BaseResultMap">
-        select id,name,create_time,update_time from club_label where is_valid = 1
+        select id,label_name,create_time,update_time from club_label where is_valid = 1
+    </select>
+    <select id="findByCid" resultMap="BaseResultMap">
+        select id,label_name from club_label where is_valid = 1 and id in (select l_id from info_label where c_id = #{cid} and is_valid = 1);
+    </select>
+    <select id="findById" resultMap="BaseResultMap">
+        select id,label_name,create_time,update_time from club_label where id = #{id} and is_valid =1
     </select>
 </mapper>

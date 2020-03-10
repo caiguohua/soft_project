@@ -20,9 +20,10 @@ public interface InfoLabelMapper {
 
     /**
      * 删除
-     * @param id
+     * @param cid
+     * @param lid
      */
-    void deleteData(@Param("id") Integer id);
+    void deleteData(@Param("cid") Integer cid,@Param("lid") Integer lid);
 
     /**
      * 更新

@@ -2,7 +2,7 @@ package com.net.soft.model;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * @author caiguohua
