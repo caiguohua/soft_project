@@ -208,9 +208,9 @@
 	background-color: #6F0102;
 }
 .xqnr {
-	width: 1200px;
-	height: auto;
-}
+	margin: 0 auto;
+	padding: 50px 0;
+	width: 1000px;
 
 .xqwz {
 	width: 1000px;
@@ -219,6 +219,7 @@
 	margin: auto;
 	color: #930000;
 	line-height: 30px;
+	padding: 50px 0;
 }
 
 .sppj {
