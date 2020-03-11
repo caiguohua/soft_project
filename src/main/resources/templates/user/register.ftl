@@ -60,7 +60,7 @@
 <!--			<div class="logo"> <img src="/soft/static/img/logo.png" /> </div>-->
 <!--		</div>-->
 <div class="am-g">
-	<div  style="width: 999px;margin: 0 auto;font-size: 14px;"> <span style="float: right;color: #333333;" >我已注册，马上<span style="color: #F88600;"><a href="./login"> 登录</a></span></span>
+	<div  style="width: 999px;margin: 0 auto;font-size: 14px;"> <span style="float: right;color: #333333;" >我已注册，马上<span style="color: #F88600;"><a href="/club/login"> 登录</a></span></span>
 	</div>
 </div>
 <div class="am-g content" style="margin-top: 12px;">
@@ -73,17 +73,18 @@
 			<li class="" style="    max-width: 95px;margin-right: 100px;"></li>
 		</ul>
 		<div class="am-tabs-bd" style="margin-top: 59px;margin-left: -20px;">
+			<form action="/soft/register" method="post">
 			<div data-tab-panel-0 class="am-tab-panel am-active">
 				<div class="am-g">
-					<div class="am-u-sm-7 am-u-sm-offset-3 "> <span class="left1"></span> <input type="text" placeholder="请输入您的手机号" class="am-form-field" style="margin: auto;display: block;float: left;padding-left: 55px;width: 528px" /> </div>
+					<div class="am-u-sm-7 am-u-sm-offset-3 "> <span class="left1"></span> <input type="text" name="phone" placeholder="请输入您的手机号" class="am-form-field" style="margin: auto;display: block;float: left;padding-left: 55px;width: 528px" /> </div>
 					<div class="am-u-sm-1 am-u-end" style="padding: 10px;"> <span class="right" style="display: none;"></span> </div>
 				</div>
 				<div class="am-g" style="margin-top: 37px;">
-					<div class="am-u-sm-4 am-u-sm-offset-3" style="padding-right: 0rem;"> <span class="left1"></span><input type="text" placeholder="请输入用户名" class="am-form-field" style="margin: auto;display: block;float: left;padding-left: 55px;width: 528px;" /> </div>
+					<div class="am-u-sm-4 am-u-sm-offset-3" style="padding-right: 0rem;"> <span class="left1"></span><input type="text" name="userName" placeholder="请输入用户名" class="am-form-field" style="margin: auto;display: block;float: left;padding-left: 55px;width: 528px;" /> </div>
 					<!--							<div class="am-u-sm-3 am-u-end" style="padding-left: 0rem;"> <button type="button" class="am-btn am-btn-default" style="width: 190px;    float: left;height: 62px;">获取短信验证码</button> </div>-->
 				</div>
 				<div class="am-g" style="margin-top: 37px;">
-					<div class="am-u-sm-4 am-u-sm-offset-3" style="padding-right: 0rem;"> <span class="left2"></span> <input type="password" placeholder="请输入密码" class="am-form-field" style="margin: auto;display: block;float: left;padding-left: 55px;width: 528px" /> </div>
+					<div class="am-u-sm-4 am-u-sm-offset-3" style="padding-right: 0rem;"> <span class="left2"></span> <input type="password" name="password" placeholder="请输入密码" class="am-form-field" style="margin: auto;display: block;float: left;padding-left: 55px;width: 528px" /> </div>
 					<!--							<div class="am-u-sm-3 am-u-end" style="padding-left: 0rem;"> <button type="button" class="am-btn am-btn-default" style="width: 190px;float: left;height: 62px;">验证码 <a style="margin-left: 50px;">换一张</a></button> </div>-->
 				</div>
 				<div class="am-g" style="margin-top: 37px;">
@@ -91,26 +92,28 @@
 					<!--							<div class="am-u-sm-3 am-u-end" style="padding-left: 0rem;"> <button type="button" class="am-btn am-btn-default" style="width: 190px;float: left;height: 62px;">验证码 <a style="margin-left: 50px;">换一张</a></button> </div>-->
 				</div>
 				<div class="am-g" style="margin-top: 21px;">
-					<form class="sui-form">
-						<div class="am-u-sm-7 am-u-sm-offset-3" style="padding-right: 0rem;">
-							<label class="checkbox-pretty inline checked">
-								<input type="checkbox" checked="checked">
-								<span style="font-size: 12px;color: #878787;">同意
-											<a>《会员章程》</a>
-											<a>《支付宝协议》</a>
-									<!--									<a>《在线协议》</a>-->
-								</span>
-							</label>
-						</div>
-					</form>
+<!--					<form class="sui-form">-->
+<!--						<div class="am-u-sm-7 am-u-sm-offset-3" style="padding-right: 0rem;">-->
+<!--							<label class="checkbox-pretty inline checked">-->
+<!--								<input type="checkbox" checked="checked">-->
+<!--								<span style="font-size: 12px;color: #878787;">同意-->
+<!--											<a>《会员章程》</a>-->
+<!--											<a>《支付宝协议》</a>-->
+<!--									&lt;!&ndash;									<a>《在线协议》</a>&ndash;&gt;-->
+<!--								</span>-->
+<!--							</label>-->
+<!--						</div>-->
+<!--					</form>-->
+					${msg}
 				</div>
 				<div class="am-g" style="margin-top:112px;">
-					<div class="am-u-sm-7 am-u-sm-offset-3 "> <button type="button" class="am-btn am-btn-warning" style="width: 528px;padding: 20px;border: 1px rgba(187, 187, 187, 0.5) solid;"><font style="font-size: 20px;font-weight: bold;">同意协议并注册</font></button> </div>
+					<div class="am-u-sm-7 am-u-sm-offset-3 "> <input type="submit" class="am-btn am-btn-warning" style="width: 528px;padding: 20px;border: 1px rgba(187, 187, 187, 0.5) solid;"></div>
 				</div>
-				<div class="am-g" style="margin-top: 20px;margin-bottom: 135px;">
-					<div class="am-u-sm-7 am-u-sm-offset-3" style="padding-right: 0rem;"> <a style="font-size: 14px;">您也可以使用邮箱注册></a> </div>
-				</div>
+<!--				<div class="am-g" style="margin-top: 20px;margin-bottom: 135px;">-->
+<!--					<div class="am-u-sm-7 am-u-sm-offset-3" style="padding-right: 0rem;"> <a style="font-size: 14px;">您也可以使用邮箱注册></a> </div>-->
+<!--				</div>-->
 			</div>
+			</form>
 			<!--设置用户信息-->
 			<!--					<div data-tab-panel-1 class="am-tab-panel ">-->
 			<!--						<div class="am-g">-->

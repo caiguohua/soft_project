@@ -40,8 +40,6 @@ public class UserController {
         this.clubCommentsService = clubCommentsService;
     }
 
-
-
     @GetMapping("/order")
     public ModelAndView order(@RequestParam(value = "uid") Integer uid,
                               @RequestParam(value = "pid") Integer pid,

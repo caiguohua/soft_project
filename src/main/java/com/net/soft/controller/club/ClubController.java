@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping(value = "/club")
-public class IndexController {
+public class ClubController {
 
     @GetMapping(value = "/index")
     public ModelAndView index(){
@@ -29,19 +29,22 @@ public class IndexController {
         return new ModelAndView("user/xian");
     }
 
-    @GetMapping(value = "/login")
-    public ModelAndView login(){
-        return new ModelAndView("user/login");
-    }
-
-    @GetMapping(value = "/regedit")
-    public ModelAndView register(){
-        return new ModelAndView("user/regedit");
-    }
-
     @GetMapping(value = "/info")
     public ModelAndView info(){
         return new ModelAndView("user/info");
+    }
+
+    @GetMapping(value = "/login")
+    public ModelAndView login(){
+        ModelAndView modelAndView = new ModelAndView();
+        String msg = "";
+        modelAndView.addObject("msg",msg);
+        modelAndView.setViewName("user/login");
+        return modelAndView;
+    }
+    @GetMapping(value = "/register")
+    public ModelAndView register(){
+        return new ModelAndView("user/register");
     }
 
 }

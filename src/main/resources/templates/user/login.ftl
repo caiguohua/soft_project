@@ -42,6 +42,7 @@
 			</div>
 		</div>
 		<div class="am-g content"  style="margin-top: 43px;">
+			<form action="/soft/login" method="post">
 			<div style="width:1200px;margin:0 auto;position: relative;z-index: 999;">
 				<div class="loginDiv " style="display: block;"  id="login" >
 						<div class="am-u-sm-12" style="padding-right: 0rem">
@@ -49,37 +50,38 @@
 						</div>
 					<div class="am-u-sm-12" style="padding-left: 30px;padding-right: 30px;">
 					<h4 style="font-weight: normal;">欢迎登录</h4>
-				 	<span class="left1"></span>	<input type="text" class="am-form-field"  placeholder="邮箱/手机号/用户名" style="padding-left: 50px;margin-top: 48px;font-size: 12px;"/>
+				 	<span class="left1"></span>	<input type="text" name="userName" class="am-form-field"  placeholder="邮箱/手机号/用户名" style="padding-left: 50px;margin-top: 48px;font-size: 12px;"/>
 				 </div>	
 				 
 				 <div class="am-u-sm-12" style="margin-top: 21px;padding-left: 30px;padding-right: 30px;">
-				  <span class="left2"></span>	  <input type="password" class="am-form-field"  placeholder="请输入密码"style="padding-left: 50px;font-size: 12px;"/>
+				  <span class="left2"></span>	  <input type="password" name="password" class="am-form-field"  placeholder="请输入密码"style="padding-left: 50px;font-size: 12px;"/>
 				 </div>	
 				 <div class="am-u-sm-12" style="margin-top: 12px;padding-left: 30px;padding-right: 30px;font-size: 12px;color: #757575;">
-				    <input type="checkbox" style="margin-top:1px;vertical-align:middle;"/><span style="margin-bottom:-1px;margin-left: 10px;font-size: 12px;vertical-align: middle;">自动登录</span>
-				 </div>	
+					 ${msg}
+<!--				    <input type="checkbox" style="margin-top:1px;vertical-align:middle;"/><span style="margin-bottom:-1px;margin-left: 10px;font-size: 12px;vertical-align: middle;">自动登录</span>-->
+				 </div>
 				
 				<div class="am-u-sm-12" style="margin-top: 45px;padding-left: 30px;padding-right: 30px;">
-				<button type="button" class="am-btn am-btn-warning" style="width: 100%;border-radius: 5px;font-size: 16px;" >登录</button>	
+				<input type="submit" class="am-btn am-btn-warning" style="width: 100%;border-radius: 5px;font-size: 16px;" >
 				</div>
 				<div class="am-u-sm-12" style="padding-left: 30px;padding-right: 30px;">
-					<p style="width: 100%;margin-top: 15px;font-size: 12px;color: #333333;">忘记登录密码
+<!--					<p style="width: 100%;margin-top: 15px;font-size: 12px;color: #333333;">忘记登录密码-->
 <!--						<span style="float: right;">免费注册</span></p>-->
-						<a style="float: right;" href="regedit">免费注册</a></p>
+						<a style="float: right;" href="/club/register">免费注册</a></p>
 				</div>
 				
 				</div>
 				<!--扫码页面-->
-				<div class="loginDiv" style="display: none;" id="erm"  >
-						<div class="am-u-sm-12" style="padding-right: 0rem">
-						<img src="/soft/static/img/pc_2.png" style="float: right;" id="ermimg" />
-						</div>
-					<div class="am-u-sm-12" style="padding-left: 30px;padding-right: 30px;margin-top: 30px;text-align: center;">
-					<h4 >手机扫码，安全登录</h4>
-				</div>	
-				 <div class="am-u-sm-12" style="padding-left: 30px;padding-right: 30px;margin-top: 50px;text-align: center;">
-				 <img src="/soft/static/img/aerweima.png" />
-				 </div>	
+<!--				<div class="loginDiv" style="display: none;" id="erm"  >-->
+<!--						<div class="am-u-sm-12" style="padding-right: 0rem">-->
+<!--						<img src="/soft/static/img/pc_2.png" style="float: right;" id="ermimg" />-->
+<!--						</div>-->
+<!--					<div class="am-u-sm-12" style="padding-left: 30px;padding-right: 30px;margin-top: 30px;text-align: center;">-->
+<!--					<h4 >手机扫码，安全登录</h4>-->
+<!--				</div>	-->
+<!--				 <div class="am-u-sm-12" style="padding-left: 30px;padding-right: 30px;margin-top: 50px;text-align: center;">-->
+<!--				 <img src="/soft/static/img/aerweima.png" />-->
+<!--				 </div>	-->
 				 
 <!--				 <div class="am-u-sm-12" style="margin-top: 50px;padding-left: 30px;padding-right: 30px;text-align: center;">-->
 <!--				  <p style="font-size: 14px;">请使用买啦网客户端扫描二维码登录</p>-->
@@ -90,8 +92,8 @@
 				<div class="am-u-sm-12" style="margin-top: 10px;padding-left: 30px;padding-right: 30px;margin-bottom: 100px;">
 				</div>
 				
-				</div>
 			</div>
+			</form>
 		</div>
 		<div class="am-g " style="margin-top: 81px;text-align: center;font-size: 12px;">
 			<div class="bottomLine" style="margin:0 auto;width:700px;height: 35px;">
@@ -104,7 +106,7 @@
 					<div  style="margin:0 auto;width:700px;height: 30px;">
 				<p style="font-size: 12px;float: left; line-height: 10px;">© &nbsp;2020-2120 版权所有 ，并保留所有权利  <span  style="margin-left: 30px;"> Tel ：156917393021 </span><span  style="margin-left: 20px;">E-mai：gl986361369@163.com</span>  </p>
 					</div>
-					</div>
+				</div>
 		</div>
 		
 	</body>
