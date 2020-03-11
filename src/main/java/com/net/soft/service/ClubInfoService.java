@@ -23,7 +23,6 @@ public interface ClubInfoService {
 
     //ydj
 
-
     ClubInfoDO findClubInfoById(int id);
 
     List<ClubInfoDO> getClubInfoByLabel(int labelId,Integer page,Integer size);

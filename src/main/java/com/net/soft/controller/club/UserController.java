@@ -85,8 +85,6 @@ public class UserController {
         return new ModelAndView("user/xian",map);
     }
 
-
-
     @GetMapping("/order")
     public ModelAndView order(@RequestParam(value = "uid") Integer uid,
                               @RequestParam(value = "pid") Integer pid,

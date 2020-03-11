@@ -44,4 +44,13 @@ public interface UserInfoMapper {
     UserInfoDO findById(@Param("id") Integer id);
 
     //ydj
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    UserInfoDO getUserInfoById(@Param("id") int id);
+
+    UserInfoDO getUserInfoByName(String name);
 }
