@@ -28,7 +28,7 @@
                             <th>标签</th>
                             <th><font size="1">创建时间</font></th>
                             <th><font size="1">修改时间</font></th>
-                            <th>+标签</th>
+                            <th>＋标签</th>
                             <th>修改</th>
                             <th>删除</th>
                         </tr>
@@ -48,9 +48,9 @@
                             <td><a href="/soft/clubLabel/findByCid?cid=${clubInfo.id}">标签</a></td>
                             <td><font size="1">${clubInfo.createTime?string('yyyy-MM-dd HH:mm:ss')}</font> </td>
                             <td><font size="1">${clubInfo.updateTime?string('yyyy-MM-dd HH:mm:ss')}</font> </td>
-                            <td><a href="/soft/clubLabel/addInfoLabel?cid=${clubInfo.id}"><button type="button" class="btn btn-sm btn-info btn-block">+</button></a></td>
+                            <td><a href="/soft/clubLabel/addInfoLabel?cid=${clubInfo.id}"><button type="button" class="btn btn-sm btn-info btn-block">＋</button></a></td>
                             <td><a href="/soft/clubInfo/show?id=${clubInfo.id}"><button type="button" class="btn btn-sm btn-warning btn-block">⚙</button></a></td>
-                            <td><a href="delete?id=${clubInfo.id}"><button type="button" class="btn btn-sm btn-danger btn-block" onClick="javascript:return window.confirm('您确定要删除吗？！')">-</button></a></td>
+                            <td><a href="delete?id=${clubInfo.id}"><button type="button" class="btn btn-sm btn-danger btn-block" onClick="javascript:return window.confirm('您确定要删除吗？！')">—</button></a></td>
                         </tr>
                         </#list>
                         </tbody>

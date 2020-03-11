@@ -58,7 +58,7 @@ public interface ClubInfoMapper {
      * @param labelId
      * @return
      */
-    List<ClubInfoDO> getClubInfoByLabel(int labelId);
+    List<ClubInfoDO> getClubInfoByLabel(@Param("labelId") int labelId);
 
 
 

@@ -21,13 +21,9 @@ public class IndexController {
 
     @GetMapping(value = "/Introduction")
     public ModelAndView introduction(){
-        return new ModelAndView("user/Introduction");
+        return new ModelAndView("user/nullClub");
     }
 
-    @GetMapping(value = "/xian")
-    public ModelAndView xian(){
-        return new ModelAndView("user/xian");
-    }
 
     @GetMapping(value = "/login")
     public ModelAndView login(){

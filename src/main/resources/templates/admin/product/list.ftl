@@ -41,7 +41,7 @@
                             <td>${clubProduct.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                             <td>${clubProduct.updateTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                             <td><a href="/soft/clubProduct/show?id=${clubProduct.id}"><button type="button" class="btn btn-sm btn-warning btn-block">⚙</button></a></td>
-                            <td><a href="delete?id=${clubProduct.id}"><button type="button" class="btn btn-sm btn-danger btn-block" onClick="javascript:return window.confirm('您确定要删除吗？！')">-</button></a></td>
+                            <td><a href="delete?id=${clubProduct.id}"><button type="button" class="btn btn-sm btn-danger btn-block" onClick="javascript:return window.confirm('您确定要删除吗？！')">—</button></a></td>
                         </tr>
                         </#list>
                         </tbody>

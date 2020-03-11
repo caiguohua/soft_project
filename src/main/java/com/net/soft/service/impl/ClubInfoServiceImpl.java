@@ -78,8 +78,13 @@ public class ClubInfoServiceImpl implements ClubInfoService {
     }
 
     @Override
-    public List<ClubInfoDO> getClubInfoByLabel(int labelId) {
-        return clubInfoMapper.getClubInfoByLabel(labelId);
+    public List<ClubInfoDO> getClubInfoByLabel(int labelId,Integer page,Integer size) {
+        PageHelper.startPage(page,size);
+        List<ClubInfoDO> list = clubInfoMapper.getClubInfoByLabel(labelId);
+        if(list == null || list.size() == 0){
+            return null;
+        }
+        return list;
     }
 
 

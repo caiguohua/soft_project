@@ -31,7 +31,7 @@
                             <td>${clubComment.comment}</td>
                             <td>${clubComment.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                             <td>${clubComment.updateTime?string('yyyy-MM-dd HH:mm:ss')}</td>
-                            <td><a href="delete?id=${clubComment.id}&cid=${cid}"><button type="button" class="btn btn-sm btn-danger btn-block" onClick="javascript:return window.confirm('您确定要删除吗？！')">-</button></a></td>
+                            <td><a href="delete?id=${clubComment.id}&cid=${cid}"><button type="button" class="btn btn-sm btn-danger btn-block" onClick="javascript:return window.confirm('您确定要删除吗？！')">—</button></a></td>
                         </tr>
                         </#list>
                         </tbody>

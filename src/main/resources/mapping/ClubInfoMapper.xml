@@ -64,7 +64,7 @@
         id = #{id}
     </select>
 
-    <select id="getCludInfoById" resultType="com.net.soft.model.ClubInfoDO">
+    <select id="getCludInfoById" resultMap="BaseResultMap">
         SELECT id,name,description,phone,address,cover_image,sequence,create_time,update_time
         FROM club_info
         WHERE
@@ -72,9 +72,9 @@
         AND
         is_valid = 1
     </select>
-    <select id="getClubInfoByLabel" resultType="com.net.soft.model.ClubInfoDO">
-        SELECT * FROM club_info WHERE club_info.id IN
-        (SELECT c_id FROM info_label WHERE l_id = #{labelId})
+    <select id="getClubInfoByLabel" resultMap="BaseResultMap">
+        SELECT id,name,description,phone,address,cover_image FROM club_info WHERE club_info.id IN
+        (SELECT c_id FROM info_label WHERE l_id = #{labelId} and is_valid = 1) and is_valid = 1
     </select>
 
 </mapper>

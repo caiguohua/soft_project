@@ -25,7 +25,7 @@
                         <tr>
                             <td>${clubLabel.id}</td>
                             <td>${clubLabel.labelName}</td>
-                            <td><a href="deleteInfoLabel?cid=${cid}&lid=${clubLabel.id}"><button type="button" class="btn btn-sm btn-danger btn-block" onClick="javascript:return window.confirm('您确定要删除吗？！')">-</button></a></td>
+                            <td><a href="deleteInfoLabel?cid=${cid}&lid=${clubLabel.id}"><button type="button" class="btn btn-sm btn-danger btn-block" onClick="javascript:return window.confirm('您确定要删除吗？！')">—</button></a></td>
                         </tr>
                         </#list>
                         </tbody>
