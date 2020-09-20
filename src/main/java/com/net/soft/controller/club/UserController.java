@@ -3,7 +3,7 @@ package com.net.soft.controller.club;
 import com.github.pagehelper.PageInfo;
 import com.net.soft.converter.ClubProductDOtoProductDTOConverter;
 import com.net.soft.exception.SoftException;
-import com.net.soft.from.ClubCommentForm;
+import com.net.soft.form.ClubCommentForm;
 import com.net.soft.model.ClubCommentsDO;
 import com.net.soft.model.ClubInfoDO;
 import com.net.soft.model.ClubProductDO;
@@ -24,7 +24,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -54,6 +57,7 @@ public class UserController {
 
     @GetMapping(value = "/list")
     public ModelAndView list(@RequestParam(value = "lid", defaultValue = "0",required = false) Integer lid,
+                             @RequestParam(value = "uid") Integer uid,
                              @RequestParam(value = "page", defaultValue = "1",required = false) Integer page,
                              @RequestParam(value = "size", defaultValue = "3",required = false) Integer size,
                              Map<String,Object> map) {
@@ -65,39 +69,65 @@ public class UserController {
         }
         if(clubInfoList == null || clubInfoList.size() == 0){
             return new ModelAndView("user/nullClub");
-
         }
         PageInfo pageList = new PageInfo(clubInfoList);
         map.put("clubInfoList",pageList);
+        map.put("uid",uid);
         map.put("currentPage", page);
         map.put("size", size);
         return new ModelAndView("user/club",map);
     }
 
     @GetMapping(value = "/getInfo")
-    public ModelAndView getInfo(Map<String,Object> map){
-        List<ClubProductDO> list = clubProductService.findByCid(1,1,10);
+    public ModelAndView getInfo(@RequestParam(value = "cid") Integer cid,
+                                @RequestParam(value = "uid") Integer uid,
+                                @RequestParam(value = "page", defaultValue = "1",required = false) Integer page,
+                                @RequestParam(value = "size", defaultValue = "5",required = false) Integer size,
+                                Map<String,Object> map){
+        ClubInfoDO clubInfoDO = clubInfoService.findOne(cid);
+        map.put("clubInfo",clubInfoDO);
+        map.put("uid",uid);
+        List<ClubCommentsDO> clubCommentList = clubCommentsService.findByCid(cid,1,10);
+        if(clubCommentList == null || clubCommentList.size() == 0){
+            ClubCommentsDO clubCommentsDO = new ClubCommentsDO();
+            clubCommentsDO.setComment("没有评论哦，快来评论吧ớ ₃ờ\n");
+            List<ClubCommentsDO> noComment = new ArrayList<>();
+            noComment.add(clubCommentsDO);
+            map.put("commentList",noComment);
+        }else{
+            map.put("commentList",clubCommentList);
+        }
+        List<ClubProductDO> list = clubProductService.findByCid(cid,page,size);
+        if(list == null || list.size() == 0){
+            return new ModelAndView("user/nullClubInfo");
+        }
         List<ProductDTO> productDTOList = ClubProductDOtoProductDTOConverter.convert(list);
         PageInfo pageList = new PageInfo(productDTOList);
         map.put("clubProductList",pageList);
-        map.put("currentPage", 1);
-        map.put("size", 10);
-        return new ModelAndView("user/xian",map);
+        map.put("currentPage", page);
+        map.put("size", size);
+        return new ModelAndView("user/clubInfo",map);
     }
 
     @GetMapping("/order")
     public ModelAndView order(@RequestParam(value = "uid") Integer uid,
                               @RequestParam(value = "pid") Integer pid,
+                              @RequestParam(value = "cid") Integer cid,
                               Map<String,Object> map){
-        Integer status = orderInfoService.createOrder(uid, pid);
-        if(status == 1 ){
-            //success
+        Boolean status = orderInfoService.createOrder(uid, pid);
+        if(status == true ){
+            map.put("uid",uid);
+            map.put("url", "/soft/user/getInfo?cid="+cid+"&uid="+uid);
+            logger.info("下单成功！");
+            return new ModelAndView("admin/common/success", map);
         }
-        return new ModelAndView("user/xian",map);
+        map.put("msg", "预约失败");
+        map.put("url", "/soft/user/getInfo?cid="+cid+"&uid="+uid);
+        return new ModelAndView("admin/common/error", map);
     }
 
 
-    @PostMapping("/insert")
+    @PostMapping("/comment")
     public ModelAndView addComment(@Valid ClubCommentForm form,
                             BindingResult bindingResult,
                             Map<String, Object> map) {
@@ -108,30 +138,26 @@ public class UserController {
             BeanUtils.copyProperties(form, clubCommentsDO);
             clubCommentsService.add(clubCommentsDO);
         } catch (SoftException e) {
+            map.put("msg", "评论失败");
+            map.put("url", "/soft/user/getInfo?cid="+form.getCid()+"&uid="+form.getUid());
+            return new ModelAndView("admin/common/error", map);
         }
 
-        map.put("url", "/soft/clubProduct/list");
+        map.put("url", "/soft/user/getInfo?cid="+form.getCid()+"&uid="+form.getUid());
         return new ModelAndView("admin/common/success", map);
     }
 
 
-//    @GetMapping(value="/getInfo")
-//    public void query(HttpServletResponse resp) {
-//        try {
-//             /*list集合中存放的是好多student对象*/
-//            List<ClubProductDO> list = clubProductService.findAll(1,10);
-//            /*将list集合装换成json对象*/
-//                    JSONArray data = JSONArray.fromObject(list);
-//                   //接下来发送数据
-//                       /*设置编码，防止出现乱码问题*/
-//                         resp.setCharacterEncoding("utf-8");
-//                         /*得到输出流*/
-//                         PrintWriter respWritter = resp.getWriter();
-//                         /*将JSON格式的对象toString()后发送*/
-//                         respWritter.append(data.toString());
-//                     } catch (Exception e) {
-//                         e.printStackTrace();
-//                     }
-//    }
+    @GetMapping("/logout")
+    public ModelAndView logout(HttpServletRequest request,
+                               HttpServletResponse response,
+                               Map<String, Object> map) {
+        request.getSession().removeAttribute("username");
+        request.getSession().invalidate();
+
+        map.put("msg", "登出成功");
+        map.put("url", "/soft/club/index");
+        return new ModelAndView("admin/common/success", map);
+    }
 
 }

@@ -1,4 +1,4 @@
-package com.net.soft.from;
+package com.net.soft.form;
 
 import lombok.Data;
 
@@ -10,5 +10,5 @@ import lombok.Data;
 @Data
 public class ClubLabelForm {
     private Integer id;
-    private String name;
+    private String labelName;
 }

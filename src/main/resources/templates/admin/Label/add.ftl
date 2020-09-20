@@ -15,7 +15,7 @@
                     <form role="form" method="post" action="/soft/clubLabel/insert">
                         <div class="form-group">
                             <label>标签名称</label>
-                            <input name="name" type="text" class="form-control" value="${(clubLabel.name)!''}"/>
+                            <input name="labelName" type="text" class="form-control" value="${(labelName)!''}"/>
                         </div>
                         <#--<input hidden type="text" name="id" value="${(clubInfo.id)!''}">-->
                         <button type="submit" class="btn btn-default btn-success">提交</button>

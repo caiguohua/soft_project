@@ -75,4 +75,10 @@ public class ClubProductServiceImpl implements ClubProductService {
     public ClubProductDO findById(Integer id) {
         return clubProductMapper.findById(id);
     }
+
+    @Override
+    public void addSum(Integer pid) {
+        Integer sum = clubProductMapper.findById(pid).getSum() + 1;
+        clubProductMapper.addSum(pid,sum);
+    }
 }

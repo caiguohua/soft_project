@@ -1,5 +1,5 @@
 <html>
-<#include "../common/header.ftl">
+<#include "../../../../../../../forum/src/main/resources/templates/admin/common/header.ftl">
 
 <body>
 <div id="wrapper" class="toggled">

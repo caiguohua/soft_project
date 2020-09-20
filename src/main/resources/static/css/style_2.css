@@ -477,7 +477,7 @@ Navigation
 
 .spinner { margin: 0 auto; width: 40px; height: 40px; position: relative; }
 
-.con1 > div, .con2 > div, .con3 > div { width: 7px; height: 7px; border-radius: 100%; position: absolute; -webkit-animation: bouncedelay 1.2s infinite ease-in-out; animation: bouncedelay 1.2s infinite ease-in-out; /* Prevent first frame from flickering when animation starts */ -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+.con1 > div, .con2 > div, .con3 > div { width: 7px; height: 7px; border-radius: 100%; position: absolute; -webkit-animation: bouncedelay 1.2s infinite ease-in-out; animation: bouncedelay 1.2s infinite ease-in-out; /* Prevent first frame form flickering when animation starts */ -webkit-animation-fill-mode: both; animation-fill-mode: both; }
 
 .spinner .spinner-container { position: absolute; width: 100%; height: 100%; }
 

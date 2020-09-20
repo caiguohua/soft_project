@@ -1,5 +1,7 @@
 package com.net.soft.interceptor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -12,18 +14,19 @@ import javax.servlet.http.HttpSession;
  * @date 2020/3/11 14:40
  * @Email:786742736@qq.com
  */
-public class InterceptorConfig implements HandlerInterceptor {
+public class SoftInterceptor implements HandlerInterceptor {
+
+    private Logger logger = LoggerFactory.getLogger(SoftInterceptor.class);
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        System.out.print("拦截器");
         HttpSession session = request.getSession();
         Object flag = session.getAttribute("flag");
         if(flag != null){
-            System.out.print("已登录");
+            logger.info("登录成功！");
             return true;
         }else {
-            System.out.print("未登录");
             response.sendRedirect("/soft/club/login");
             return false;
         }

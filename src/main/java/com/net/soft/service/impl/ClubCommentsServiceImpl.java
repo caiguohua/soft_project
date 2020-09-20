@@ -33,7 +33,7 @@ public class ClubCommentsServiceImpl implements ClubCommentsService {
 
     @Override
     public void delete(Integer id) {
-
+        clubCommentsMapper.deleteData(id);
     }
 
     @Override

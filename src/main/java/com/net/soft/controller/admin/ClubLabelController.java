@@ -1,7 +1,7 @@
 package com.net.soft.controller.admin;
 
 import com.net.soft.exception.SoftException;
-import com.net.soft.from.ClubLabelForm;
+import com.net.soft.form.ClubLabelForm;
 import com.net.soft.model.ClubLabelDO;
 import com.net.soft.service.ClubLabelService;
 import com.net.soft.service.InfoLabelService;
@@ -99,7 +99,7 @@ public class ClubLabelController {
     public ModelAndView add(@Valid ClubLabelForm form,
                             BindingResult bindingResult,
                             Map<String, Object> map) {
-        if(form.getName() == null){
+        if(form.getLabelName() == null){
             map.put("msg", "没有输入参数");
             map.put("url", "/soft/clubLabel/add");
             return new ModelAndView("admin/common/error", map);
@@ -120,7 +120,7 @@ public class ClubLabelController {
             return new ModelAndView("admin/common/error", map);
         }
 
-        map.put("url", "/soft/clubProduct/list");
+        map.put("url", "/soft/clubLabel/list");
         return new ModelAndView("admin/common/success", map);
     }
 

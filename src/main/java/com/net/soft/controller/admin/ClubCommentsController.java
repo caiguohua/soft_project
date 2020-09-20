@@ -37,9 +37,6 @@ public class ClubCommentsController {
                              Map<String,Object> map) {
         List<ClubCommentsDO> commentsList = clubCommentsService.findByCid(cid,page,size);
         if(commentsList == null || commentsList.size() == 0){
-//            map.put("msg", "无数据");
-//            map.put("url", "/soft/clubInfo/list");
-//            return new ModelAndView("admin/common/error", map);
             return new ModelAndView("admin/comments/null");
         }
         PageInfo pageList = new PageInfo(commentsList);

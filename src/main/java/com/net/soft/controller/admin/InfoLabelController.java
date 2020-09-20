@@ -1,7 +1,7 @@
 package com.net.soft.controller.admin;
 
 import com.net.soft.exception.SoftException;
-import com.net.soft.from.InfoLabelForm;
+import com.net.soft.form.InfoLabelForm;
 import com.net.soft.model.InfoLabelDO;
 import com.net.soft.service.InfoLabelService;
 import org.springframework.beans.BeanUtils;

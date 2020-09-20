@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="/soft/static/js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="/soft/static/js/amazeui.min.js"></script>
 	<link rel="stylesheet" href="/soft/static/css/regedit.css" />
-	<link rel="stylesheet" href="/soft/static/css/sui.css" />
+	<#--<link rel="stylesheet" href="/soft/static/css/sui.css" />-->
 	<script type="text/javascript" src="/soft/static/js/sui.js"></script>
 	<title>会所注册页</title>
 	<style>
@@ -60,7 +60,7 @@
 <!--			<div class="logo"> <img src="/soft/static/img/logo.png" /> </div>-->
 <!--		</div>-->
 <div class="am-g">
-	<div  style="width: 999px;margin: 0 auto;font-size: 14px;"> <span style="float: right;color: #333333;" >我已注册，马上<span style="color: #F88600;"><a href="/club/login"> 登录</a></span></span>
+	<div  style="width: 999px;margin: 0 auto;font-size: 14px;"> <span style="float: right;color: #333333;" >我已注册，马上<span style="color: #F88600;"><a href="/soft/club/login"> 登录</a></span></span>
 	</div>
 </div>
 <div class="am-g content" style="margin-top: 12px;">
@@ -92,20 +92,21 @@
 					<!--							<div class="am-u-sm-3 am-u-end" style="padding-left: 0rem;"> <button type="button" class="am-btn am-btn-default" style="width: 190px;float: left;height: 62px;">验证码 <a style="margin-left: 50px;">换一张</a></button> </div>-->
 				</div>
 				<div class="am-g" style="margin-top: 21px;">
-<!--					<form class="sui-form">-->
-<!--						<div class="am-u-sm-7 am-u-sm-offset-3" style="padding-right: 0rem;">-->
-<!--							<label class="checkbox-pretty inline checked">-->
-<!--								<input type="checkbox" checked="checked">-->
-<!--								<span style="font-size: 12px;color: #878787;">同意-->
-<!--											<a>《会员章程》</a>-->
-<!--											<a>《支付宝协议》</a>-->
-<!--									&lt;!&ndash;									<a>《在线协议》</a>&ndash;&gt;-->
-<!--								</span>-->
-<!--							</label>-->
-<!--						</div>-->
-<!--					</form>-->
-					${msg}
+					<form class="sui-form">
+						<div class="am-u-sm-7 am-u-sm-offset-3" style="padding-right: 0rem;"><label class="checkbox-pretty inline checked">
+ 								<input type="checkbox" checked="checked">
+ 								<span style="font-size: 12px;color: #878787;">同意
+ 											<a>《会员章程》</a>
+ 											<a>《支付宝协议》</a>
+ 																		<a>《在线协议》</a>
+ 								</span>
+ 							</label>
+ 						</div>
+ 					</form>
+
 				</div>
+
+
 				<div class="am-g" style="margin-top:112px;">
 					<div class="am-u-sm-7 am-u-sm-offset-3 "> <input type="submit" class="am-btn am-btn-warning" style="width: 528px;padding: 20px;border: 1px rgba(187, 187, 187, 0.5) solid;"></div>
 				</div>
@@ -114,56 +115,11 @@
 <!--				</div>-->
 			</div>
 			</form>
-			<!--设置用户信息-->
-			<!--					<div data-tab-panel-1 class="am-tab-panel ">-->
-			<!--						<div class="am-g">-->
-			<!--							<div class="am-u-sm-6 am-u-sm-offset-3 "> <span class="left3"></span> <input type="password" placeholder="请输入密码" class="am-form-field" style="margin: auto;display: block;float: left;padding-left: 59px;width: 100%" /> </div>-->
-			<!--						</div>-->
-			<!--						<div class="am-g" style="margin-top: 36px;">-->
-			<!--							<div class="am-u-sm-6 am-u-sm-offset-3 "> <span class="left3"></span> <input type="password" placeholder="请再次输入密码" class="am-form-field" style="margin: auto;display: block;float: left;padding-left: 59px;width: 100%" /> </div>-->
-			<!--						</div>-->
-			<!--&lt;!&ndash;						<div class="am-g" style="margin-top: 16px;">&ndash;&gt;-->
-			<!--&lt;!&ndash;							<div class="am-u-sm-6 am-u-sm-offset-3 ">&ndash;&gt;-->
-			<!--&lt;!&ndash;								<span style="margin-left:12px;"> 是否有上级:<label data-toggle="radio" class="radio-pretty inline checked"> <input type="radio" checked="checked" name="radio1"><span>有</span></label> &ndash;&gt;-->
-			<!--&lt;!&ndash;								<label data-toggle="radio" class="radio-pretty inline" style="margin-left: 34px;"> <input type="radio" name="radio1"><span>无</span> </label>									</div>&ndash;&gt;-->
-			<!--&lt;!&ndash;						</div>&ndash;&gt;-->
-			<!--&lt;!&ndash;						<div class="am-g" style="margin-top: 16px;">&ndash;&gt;-->
-			<!--&lt;!&ndash;							<div class="am-u-sm-6 am-u-sm-offset-3 "> <span class="left4"></span> <input type="text" placeholder="请输入您的上级" class="am-form-field" style="margin: auto;display: block;float: left;padding-left: 59px;width: 100%" /> </div>&ndash;&gt;-->
-			<!--&lt;!&ndash;						</div>&ndash;&gt;-->
-			<!--						<div class="am-g" style="margin-top: 58px;margin-bottom: 80px;">-->
-			<!--							<div class="am-u-sm-6 am-u-sm-offset-3 "> <button type="button" class="am-btn am-btn-warning" style="width: 100%;height: 62px;font-size: 20px;font-weight: bold;border: 1px rgba(187, 187, 187, 0.5) solid;">确认</button> </div>-->
-			<!--						</div>-->
-			<!--					</div>-->
-			<!--成功-->
-			<!--					<div data-tab-panel-2 class="am-tab-panel ">-->
-			<!--						&lt;!&ndash;<div class="am-g"> <div class="am-u-sm-12" style="text-align: center;"> <img src="img/lion.png" /> </div> </div>&ndash;&gt;-->
-			<!--						<div class="am-g" style="margin-top: 90px;">-->
-			<!--							<div class="am-u-sm-6 am-u-sm-offset-3 " style="    text-align: center;">-->
-			<!--								<h2 style="color: #8F8F8F;font-size: 20px;">恭喜您，账号注册成功</h2> </div>-->
-			<!--						</div>-->
-			<!--&lt;!&ndash;						<div class="am-g" style="line-height:14px;margin-top: 12px;">&ndash;&gt;-->
-			<!--&lt;!&ndash;							<div class="am-u-sm-6 am-u-sm-offset-5 "> <a style="font-size: 14px;color: #4689cb;margin-top: 4px;">买啦赠送您50买豆，点击查看</a> </div>&ndash;&gt;-->
-			<!--&lt;!&ndash;						</div>&ndash;&gt;-->
-			<!--						<div class="am-g" style="margin-top: 176px;margin-bottom: 124px;">-->
-			<!--							<div class="am-u-sm-6 am-u-sm-offset-3 "> <button type="button" class="am-btn am-btn-warning" style="width: 100%;height: 62px;font-size: 20px;font-weight: bold;border: 1px rgba(187, 187, 187, 0.5)B solid;">完成</button> </div>-->
-			<!--						</div>-->
-			<!--					</div>-->
+
 		</div>
 	</div>
 </div>
-<div class="am-g " style="margin-top: 81px;text-align: center;font-size: 12px;">
-	<div class="bottomLine" style="margin:0 auto;width:700px;height: 35px;">
-			<span style="float: left;word-spacing:0.52rem;    text-align: center;    width: 100%;">关于我们 | 联系我们 | 商家入驻 | 友情链接 | 站点地图 | 手机商城 | 销售联盟 | 商城社区 | 企业文化 | 帮助中心 
-			</span>
-	</div>
-</div>
-<div class="am-g">
-	<div class="bot ">
-		<div  style="margin:0 auto;width:700px;height: 30px;">
-			<p style="font-size: 12px;float: left;">© &nbsp;2005-2016 立立立 版权所有 ，并保留所有权利 <span style="margin-left: 30px;"> Tel ：15691739302 </span><span style="margin-left: 30px;">E-mai：gl986361369@163.com</span> </p>
-		</div>
-	</div>
-</div>
+
 </body>
 
 </html>

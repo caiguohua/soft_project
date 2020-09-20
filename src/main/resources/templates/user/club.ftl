@@ -7,12 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>会所介绍</title>
+    <title>会所列表</title>
 
     <!-- css -->
     <link href="/soft/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/soft/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<!--    <link rel="stylesheet" type="text/css" href="plugins/cubeportfolio/css/cubeportfolio.min.css">-->
+    <link rel="stylesheet" type="text/css" href="plugins/cubeportfolio/css/cubeportfolio.min.css">
     <link href="/soft/static/css/nivo-lightbox.css" rel="stylesheet"/>
     <link href="/soft/static/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css"/>
     <link href="/soft/static/css/owl.carousel.css" rel="stylesheet" media="screen"/>
@@ -50,7 +50,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <img src="/soft/static/img/logo.png" alt="" width="150" height="40"/>
                 </a>
             </div>
@@ -58,10 +58,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
-
-                    <li><a href="login.html">登出</a></li>
-
-
+                    <li><a href="/soft/user/logout">登出</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -70,12 +67,15 @@
     </nav>
 
     <div>
-        <ul>
-            <li>2</li>
-            <li>2</li>
-            <li>2</li>
-            <li>2</li>
-        </ul>
+        <#--<ul>-->
+            <#--<li>2</li>-->
+            <#--<li>2</li>-->
+            <#--<li>2</li>-->
+            <#--<li>2</li>-->
+        <#--</ul>-->
+        <br>
+        <br>
+        <br>
     </div>
 
 
@@ -90,13 +90,13 @@
 
                 <ul class="nav nav-tabs">
                     <li class="active">
-                        <a href="/soft/user/list?lid=0">ALL</a>
+                        <a href="/soft/user/list?lid=0&uid=${uid}">ALL</a>
                     </li>
                     <li>
-                        <a href="/soft/user/list?lid=1">最受欢迎</a>
+                        <a href="/soft/user/list?lid=1&uid=${uid}">最受欢迎</a>
                     </li>
                     <li class="disabled">
-                        <a href="/soft/user/list?lid=2">妈妈最爱</a>
+                        <a href="/soft/user/list?lid=2&uid=${uid}">妈妈最爱</a>
                     </li>
                 </ul>
 
@@ -115,7 +115,7 @@
                             <td>${clubInfo.name}</td>
                             <td><img height="140" width="200" src="${clubInfo.coverImage}" alt=""></td>
                             <td>${clubInfo.address}</td>
-                            <td><a href="/soft/user/getInfo?id=${clubInfo.id}"><button type="button" class="btn btn-sm btn-warning btn-block">详情</button></a></td>
+                            <td><a href="/soft/user/getInfo?cid=${clubInfo.id}&uid=${uid}"><button type="button" class="btn btn-sm btn-warning btn-block">详情</button></a></td>
                         </tr>
                         </#list>
                         </tbody>
@@ -127,19 +127,19 @@
                         <#if currentPage lte 1>
                             <li class="disabled"><a href="#">上一页</a></li>
                         <#else>
-                            <li><a href="/soft/user/list?page=${currentPage - 1}&size=${size}">上一页</a></li>
+                            <li><a href="/soft/user/list?uid=${uid}&page=${currentPage - 1}&size=${size}">上一页</a></li>
                         </#if>
                         <#list 1..clubInfoList.getPages() as index>
                             <#if currentPage == index>
                                 <li class="disabled"><a href="#">${index}</a></li>
                             <#else>
-                                <li><a href="/soft/user/list?page=${index}&size=${size}">${index}</a></li>
+                                <li><a href="/soft/user/list?uid=${uid}&page=${index}&size=${size}">${index}</a></li>
                             </#if>
                         </#list>
                         <#if currentPage gte clubInfoList.getPages()>
                             <li class="disabled"><a href="#">下一页</a></li>
                         <#else>
-                            <li><a href="/soft/user/list?page=${currentPage + 1}&size=${size}">下一页</a></li>
+                            <li><a href="/soft/user/list?uid=${uid}&page=${currentPage + 1}&size=${size}">下一页</a></li>
                         </#if>
                         </ul>
                     </div>

@@ -27,8 +27,12 @@
         where is_valid = 1
     </select>
 
-    <select id="findById" resultType="java.lang.Integer">
+    <select id="findStatusById" resultType="java.lang.Integer">
         select status from order_info where id = #{id} and is_valid = 1
+    </select>
+
+    <select id="findPidById" resultType="java.lang.Integer">
+        select p_id where id = #{id} and is_valid = 1
     </select>
 
     <update id="finishOrder" parameterType="java.lang.Integer">
@@ -44,6 +48,10 @@
         values
         (#{record.uid},#{record.userName},#{record.userPhone},#{record.pid},#{record.productName},#{record.productPrice},#{record.dateUnit})
     </insert>
+
+    <select id="findNumByUid" resultType="java.lang.Integer">
+        select count(*) from order_info where  u_id = #{uid}
+    </select>
 
 
 

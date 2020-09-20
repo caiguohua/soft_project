@@ -53,7 +53,7 @@
             <#--<a href="/soft/admin/login"><i class="fa fa-fw fa-list-alt"></i><font size="3" color="#ffd700"> 登录 </font></a>-->
         <#--</li>-->
         <li>
-            <a href="/soft/admin/logout"><i class="fa fa-fw fa-list-alt"></i><font size="3" color="#ffd700"> 登出 </font></a>
+            <a href="/soft/user/logout"><i class="fa fa-fw fa-list-alt"></i><font size="3" color="#ffd700"> 登出 </font></a>
         </li>
     </ul>
 

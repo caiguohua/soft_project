@@ -2,7 +2,6 @@ package com.net.soft.utils;
 
 import com.net.soft.mapper.UserInfoMapper;
 import com.net.soft.model.UserInfoDO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;

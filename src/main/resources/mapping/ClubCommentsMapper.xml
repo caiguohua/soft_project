@@ -4,18 +4,19 @@
     <resultMap id="BaseResultMap" type="com.net.soft.model.ClubCommentsDO">
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="c_id" property="cid" jdbcType="INTEGER" />
+        <result column="u_id" property="uid" jdbcType="INTEGER" />
         <result column="comment" property="comment" jdbcType="VARCHAR" />
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     </resultMap>
     <select id="findByCid" resultMap="BaseResultMap">
-        select id,c_id,comment,create_time,update_time from club_comments where c_id = #{cid} and is_valid = 1;
+        select id,c_id,u_id,comment,create_time,update_time from club_comments where c_id = #{cid} and is_valid = 1
     </select>
     <update id="deleteData" parameterType="java.lang.Integer">
         update club_comments set is_valid = 0 where id = #{id} and is_valid = 1
     </update>
     <insert id="insert" parameterType="com.net.soft.model.ClubCommentsDO">
-        insert into club_comments ( c_id, comment) values (#{record.cid},#{record.comment});
+        insert into club_comments ( c_id,u_id, comment) values (#{record.cid},#{record.uid},#{record.comment})
     </insert>
 
 

@@ -1,6 +1,7 @@
 <html>
 <#include "../common/header.ftl">
 
+
 <body>
 <div id="wrapper" class="toggled">
 
@@ -12,7 +13,6 @@
         <div class="container-fluid">
             <div class="row clearfix">
                 <div class="col-md-12 column">
-
                     <form role="form" method="post" action="/soft/clubInfo/update">
                         <div class="form-group">
                             <label>名字</label>

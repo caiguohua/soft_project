@@ -1,4 +1,4 @@
-package com.net.soft.from;
+package com.net.soft.form;
 
 
 import lombok.Data;

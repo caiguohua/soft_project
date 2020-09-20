@@ -67,7 +67,7 @@
 				<div class="am-u-sm-12" style="padding-left: 30px;padding-right: 30px;">
 <!--					<p style="width: 100%;margin-top: 15px;font-size: 12px;color: #333333;">忘记登录密码-->
 <!--						<span style="float: right;">免费注册</span></p>-->
-						<a style="float: right;" href="/club/register">免费注册</a></p>
+						<a style="float: right;" href="/soft/club/register">免费注册</a></p>
 				</div>
 				
 				</div>

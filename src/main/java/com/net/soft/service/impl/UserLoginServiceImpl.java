@@ -6,6 +6,10 @@ import com.net.soft.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
+import java.util.HashMap;
+
 import static com.net.soft.utils.UserCheck.userIsExist;
 
 /**
@@ -16,25 +20,24 @@ import static com.net.soft.utils.UserCheck.userIsExist;
 @Service
 public class UserLoginServiceImpl implements UserLoginService {
 
-    private final UserInfoMapper userInfoMapper;
-
-    @Autowired
-    public UserLoginServiceImpl(UserInfoMapper userInfoMapper) {
-        this.userInfoMapper = userInfoMapper;
-    }
+    @Resource
+    private UserInfoMapper userInfoMapper;
 
     @Override
-    public String userLogin(String userName,String password) {
+    public HashMap<String,UserInfoDO> userLogin(String userName, String password) {
+        HashMap<String,UserInfoDO> map = new HashMap<>(10);
         if (!userIsExist(userName)){
-            return "用户名不存在";
+            map.put("error",null);
+            return map;
         }
-        if(userInfoMapper.getUserInfoByName(userName)
-                .getPassword()
-                .equals(password)){
-            return "登陆成功";
+        UserInfoDO userInfoDO = userInfoMapper.getUserInfoByName(userName);
+        if(userInfoDO.getPassword().equals(password)){
+            map.put("success",userInfoDO);
+            return map;
         }
         else {
-            return "密码错误";
+            map.put("error",null);
+            return map;
         }
     }
 
@@ -51,7 +54,7 @@ public class UserLoginServiceImpl implements UserLoginService {
                 userInfoDO.setName(userName);
                 userInfoDO.setPhone(phone);
                 userInfoDO.setPassword(password);
-                userInfoDO.setType(2);
+                userInfoDO.setType(0);
 
                 userInfoMapper.insertData(userInfoDO);
                 return "注册成功";

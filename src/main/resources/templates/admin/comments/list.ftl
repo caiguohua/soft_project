@@ -1,6 +1,7 @@
 <html>
 <#include "../common/header.ftl">
 
+
 <body>
 <div id="wrapper" class="toggled">
 

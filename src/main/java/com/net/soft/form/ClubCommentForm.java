@@ -1,4 +1,4 @@
-package com.net.soft.from;
+package com.net.soft.form;
 
 import lombok.Data;
 
@@ -9,5 +9,8 @@ import lombok.Data;
  */
 @Data
 public class ClubCommentForm {
+    private Integer cid;
+    private Integer uid;
     private String comment;
+
 }

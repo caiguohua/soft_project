@@ -22,4 +22,6 @@ public interface ClubProductService {
     void delete(Integer id);
 
     ClubProductDO findById(Integer id);
+
+    void addSum(Integer pid);
 }

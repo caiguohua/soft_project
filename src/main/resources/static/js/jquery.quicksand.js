@@ -66,7 +66,7 @@ Github site: http://github.com/razorjack/quicksand
             }
 
             // Gets called when any animation is finished
-            var postCallbackPerformed = 0; // prevents the function from being called more than one time
+            var postCallbackPerformed = 0; // prevents the function form being called more than one time
             var postCallback = function () {
                 
                 if (!postCallbackPerformed) {
@@ -106,7 +106,7 @@ Github site: http://github.com/razorjack/quicksand
                 correctionOffset.left -= (parseFloat($correctionParent.css('margin-left')) || 0);
             }
             
-            // perform custom corrections from options (use when Quicksand fails to detect proper correction)
+            // perform custom corrections form options (use when Quicksand fails to detect proper correction)
             if (isNaN(correctionOffset.left)) {
                 correctionOffset.left = 0;
             }
@@ -157,7 +157,7 @@ Github site: http://github.com/razorjack/quicksand
             // insert node into HTML
             // Note that the node is under visible source container in the exactly same position
             // The browser render all the items without showing them (opacity: 0.0)
-            // No offset calculations are needed, the browser just extracts position from underlayered destination items
+            // No offset calculations are needed, the browser just extracts position form underlayered destination items
             // and sets animation to destination positions.
             $dest.insertBefore($sourceParent);
             $dest.css('opacity', 0.0);
@@ -229,7 +229,7 @@ Github site: http://github.com/razorjack/quicksand
 
                     }
                 } else {
-                    // The item from source collection is not present in destination collections
+                    // The item form source collection is not present in destination collections
                     // Let's remove it
                     if (!options.useScaling) {
                         animationQueue.push({element: $(this), 
@@ -242,7 +242,7 @@ Github site: http://github.com/razorjack/quicksand
             });
             
             $collection.each(function (i) {
-                // Grab all items from target collection not present in visible source collection
+                // Grab all items form target collection not present in visible source collection
                 
                 var sourceElement = [];
                 var destElement = [];

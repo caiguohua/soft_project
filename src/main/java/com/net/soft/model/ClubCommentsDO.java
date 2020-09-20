@@ -13,6 +13,7 @@ import java.util.Date;
 public class ClubCommentsDO {
     private Integer id;
     private Integer cid;
+    private Integer uid;
     private String comment;
     private Boolean isvalid;
     private Date createTime;

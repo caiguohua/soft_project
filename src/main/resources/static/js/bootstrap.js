@@ -124,7 +124,7 @@ if (typeof jQuery === 'undefined') {
     $parent.removeClass('in')
 
     function removeElement() {
-      // detach from parent, fire event then clean up data
+      // detach form parent, fire event then clean up data
       $parent.detach().trigger('closed.bs.alert').remove()
     }
 

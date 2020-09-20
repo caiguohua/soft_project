@@ -887,7 +887,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * Code visual infomation from data after data processing
+	     * Code visual infomation form data after data processing
 	     *
 	     * @param {module:echarts/model/Global} ecModel
 	     * @private
@@ -1700,7 +1700,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * The interface is different from queryComponents,
+	         * The interface is different form queryComponents,
 	         * which is convenient for inner usage.
 	         *
 	         * @usage
@@ -2840,7 +2840,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var emphasisOpt = opt.emphasis = opt.emphasis || {};
 	            var normalOpt = opt.normal = opt.normal || {};
 
-	            // Default emphasis option from normal
+	            // Default emphasis option form normal
 	            zrUtil.each(subOpts, function (subOptName) {
 	                var val = zrUtil.retrieve(emphasisOpt[subOptName], normalOpt[subOptName]);
 	                if (val != null) {
@@ -2875,7 +2875,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * data could be [12, 2323, {value: 223}, [1221, 23], {value: [2, 23]}]
-	     * This helper method retieves value from data.
+	     * This helper method retieves value form data.
 	     * @param {string|number|Date|Array|Object} dataItem
 	     * @return {number|string|Date|Array.<number|string|Date>}
 	     */
@@ -3262,7 +3262,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * Linear mapping a value from domain to range
+	     * Linear mapping a value form domain to range
 	     * @memberOf module:echarts/util/number
 	     * @param  {(number|Array.<number>)} val
 	     * @param  {Array.<number>} domain Domain extent domain[0] can be bigger than domain[1]
@@ -3646,7 +3646,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        };
 	    };
 
-	    // superCall should have class info, which can not be fetch from 'this'.
+	    // superCall should have class info, which can not be fetch form 'this'.
 	    // Consider this case:
 	    // class A has method f,
 	    // class B inherits class A, overrides method f, f call superApply('f'),
@@ -3906,7 +3906,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    module.exports = {
 	        /**
-	         * Get color property or get color from option.textStyle.color
+	         * Get color property or get color form option.textStyle.color
 	         * @return {string}
 	         */
 	        getTextColor: function () {
@@ -3916,7 +3916,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Create font string from fontStyle, fontWeight, fontSize, fontFamily
+	         * Create font string form fontStyle, fontWeight, fontSize, fontFamily
 	         * @return {string}
 	         */
 	        getFont: function () {
@@ -4304,7 +4304,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        })(),
 
 	        /**
-	         * Calculate matrix of transforming from self to target rect
+	         * Calculate matrix of transforming form self to target rect
 	         * @param  {module:zrender/core/BoundingRect} b
 	         * @return {Array.<number>}
 	         */
@@ -4358,7 +4358,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Copy from another rect
+	         * Copy form another rect
 	         */
 	        copy: function (other) {
 	            this.x = other.x;
@@ -5380,7 +5380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var horizontalMargin = margin[1] + margin[3];
 	        var aspect = positionInfo.aspect;
 
-	        // If width is not specified, calculate width from left and right
+	        // If width is not specified, calculate width form left and right
 	        if (isNaN(width)) {
 	            width = containerWidth - right - horizontalMargin - left;
 	        }
@@ -5411,7 +5411,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        }
 
-	        // If left is not specified, calculate left from right and width
+	        // If left is not specified, calculate left form right and width
 	        if (isNaN(left)) {
 	            left = containerWidth - right - width - horizontalMargin;
 	        }
@@ -5555,7 +5555,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                return newParams;
 	            }
 	            else {
-	                // Chose another param from targetOption by priority.
+	                // Chose another param form targetOption by priority.
 	                // When 'ignoreSize', enoughParamNumber is 1 and those will not happen.
 	                for (var i = 0; i < names.length; i++) {
 	                    var name = names[i];
@@ -5584,7 +5584,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * Retrieve 'left', 'right', 'top', 'bottom', 'width', 'height' from object.
+	     * Retrieve 'left', 'right', 'top', 'bottom', 'width', 'height' form object.
 	     * @param {Object} source
 	     * @return {Object} Result contains those props.
 	     */
@@ -5593,7 +5593,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * Retrieve 'left', 'right', 'top', 'bottom', 'width', 'height' from object.
+	     * Retrieve 'left', 'right', 'top', 'bottom', 'width', 'height' form object.
 	     * @param {Object} source
 	     * @return {Object} Result contains those props.
 	     */
@@ -5954,7 +5954,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            if (timelineOptions.length) {
 	                // getTimelineOption can only be called after ecModel inited,
-	                // so we can get currentIndex from timelineModel.
+	                // so we can get currentIndex form timelineModel.
 	                var timelineModel = ecModel.getComponent('timeline');
 	                if (timelineModel) {
 	                    option = clone(
@@ -6282,7 +6282,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Init a data structure from data related option in series
+	         * Init a data structure form data related option in series
 	         * Must be overwritten
 	         */
 	        getInitialData: function () {},
@@ -6321,7 +6321,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * Coord dimension to data dimension.
 	         *
 	         * By default the result is the same as dimensions of series data.
-	         * But some series dimensions are different from coord dimensions (i.e.
+	         * But some series dimensions are different form coord dimensions (i.e.
 	         * candlestick and boxplot). Override this method to handle those cases.
 	         *
 	         * Coord dimension to data dimension can be one-to-many
@@ -6965,7 +6965,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Add self from zrender instance.
+	         * Add self form zrender instance.
 	         * Not recursively because it will be invoked when element added to storage.
 	         * @param {module:zrender/ZRender} zr
 	         */
@@ -6985,7 +6985,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Remove self from zrender instance.
+	         * Remove self form zrender instance.
 	         * Not recursively because it will be invoked when element added to storage.
 	         * @param {module:zrender/ZRender} zr
 	         */
@@ -7179,7 +7179,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var _h = this._$handlers[type];
 	                var len = _h.length;
 	                for (var i = 0; i < len;) {
-	                    // Optimize advise from backbone
+	                    // Optimize advise form backbone
 	                    switch (argLen) {
 	                        case 1:
 	                            _h[i]['h'].call(_h[i]['ctx']);
@@ -7226,7 +7226,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var _h = this._$handlers[type];
 	                var len = _h.length;
 	                for (var i = 0; i < len;) {
-	                    // Optimize advise from backbone
+	                    // Optimize advise form backbone
 	                    switch (argLen) {
 	                        case 1:
 	                            _h[i]['h'].call(ctx);
@@ -7459,7 +7459,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            matrix.rotate(m, m, rotation);
 	        }
 	        if (origin) {
-	            // Translate back from origin
+	            // Translate back form origin
 	            m[4] += origin[0];
 	            m[5] += origin[1];
 	        }
@@ -8124,7 +8124,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // find kf2 and kf3 and do interpolation
 	            var frame;
 	            if (percent < lastFramePercent) {
-	                // Start from next key
+	                // Start form next key
 	                start = Math.min(lastFrame + 1, trackLen - 1);
 	                for (frame = start; frame >= 0; frame--) {
 	                    if (kfPercents[frame] <= percent) {
@@ -8286,7 +8286,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    // If time is 0
 	                    //  Then props is given initialize value
 	                    // Else
-	                    //  Initialize value from current prop value
+	                    //  Initialize value form current prop value
 	                    if (time !== 0) {
 	                        tracks[propName].push({
 	                            time: 0,
@@ -9152,7 +9152,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return;
 	        }
 
-	        // RGB from 0 to 255
+	        // RGB form 0 to 255
 	        var R = rgba[0] / 255;
 	        var G = rgba[1] / 255;
 	        var B = rgba[2] / 255;
@@ -9164,7 +9164,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var L = (vMax + vMin) / 2;
 	        var H;
 	        var S;
-	        // HSL results from 0 to 1
+	        // HSL results form 0 to 1
 	        if (delta === 0) {
 	            H = 0;
 	            S = 0;
@@ -9680,7 +9680,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * Create a path element from path data string
+	     * Create a path element form path data string
 	     * @param {string} pathData
 	     * @param {Object} opts
 	     * @param {module:zrender/core/BoundingRect} rect
@@ -10418,7 +10418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    module.exports = {
 	        /**
-	         * Create a Path object from path string data
+	         * Create a Path object form path string data
 	         * http://www.w3.org/TR/SVG/paths.html#PathData
 	         * @param  {Object} opts Other options
 	         */
@@ -10427,7 +10427,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Create a Path class from path string data
+	         * Create a Path class form path string data
 	         * @param  {string} str
 	         * @param  {Object} opts Other options
 	         */
@@ -10727,7 +10727,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        setShape: function (key, value) {
 	            var shape = this.shape;
-	            // Path from string may not have shape
+	            // Path form string may not have shape
 	            if (shape) {
 	                if (zrUtil.isObject(key)) {
 	                    for (var name in key) {
@@ -11231,7 +11231,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Extend from other style
+	         * Extend form other style
 	         * @param {zrender/graphic/Style} otherStyle
 	         * @param {boolean} overwrite
 	         */
@@ -12061,7 +12061,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Rebuild path from current data
+	         * Rebuild path form current data
 	         * Rebuild path will not consider javascript implemented line dash.
 	         * @param {CanvasRenderingContext} ctx
 	         */
@@ -13695,7 +13695,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	            // FIXME Case create many images with src
 	            if (!image && src) {
-	                // Try get from global image cache
+	                // Try get form global image cache
 	                var cachedImgObj = globalImageCache.get(src);
 	                if (!cachedImgObj) {
 	                    // Create a new image
@@ -14936,7 +14936,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var Gradient = __webpack_require__(4);
 
 	    /**
-	     * x, y, x2, y2 are all percent from 0 to 1
+	     * x, y, x2, y2 are all percent form 0 to 1
 	     * @param {number} [x=0]
 	     * @param {number} [y=0]
 	     * @param {number} [x2=1]
@@ -15000,7 +15000,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var Gradient = __webpack_require__(4);
 
 	    /**
-	     * x, y, r are all percent from 0 to 1
+	     * x, y, r are all percent form 0 to 1
 	     * @param {number} [x=0.5]
 	     * @param {number} [y=0.5]
 	     * @param {number} [r=0.5]
@@ -16008,7 +16008,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * Prevent mouse event from being dispatched after Touch Events action
+	     * Prevent mouse event form being dispatched after Touch Events action
 	     * @see <https://github.com/deltakosh/handjs/blob/master/src/hand.base.js>
 	     * 1. Mobile browsers dispatch mouse events 300ms after touchend.
 	     * 2. Chrome for Android dispatch mousedown for long-touch about 650ms
@@ -17144,7 +17144,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	                    // Optimize when clipping on group with several elements
 	                    if (isClipPathChanged(clipPaths, prevElClipPaths)) {
-	                        // If has previous clipping state, restore from it
+	                        // If has previous clipping state, restore form it
 	                        if (prevElClipPaths) {
 	                            ctx.restore();
 	                        }
@@ -18281,7 +18281,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * Helper function to create a list from option data
+	     * Helper function to create a list form option data
 	     */
 	    function createListFromArray(data, seriesModel, ecModel) {
 	        // If data is undefined
@@ -18294,7 +18294,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var result = creator && creator(data, seriesModel, ecModel);
 	        var dimensions = result && result.dimensions;
 	        if (!dimensions) {
-	            // Get dimensions from registered coordinate system
+	            // Get dimensions form registered coordinate system
 	            dimensions = (registeredCoordSys && registeredCoordSys.dimensions) || ['x', 'y'];
 	            dimensions = completeDimensions(dimensions, data, dimensions.concat(['value']));
 	        }
@@ -18667,7 +18667,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * Initialize from data
+	     * Initialize form data
 	     * @param {Array.<Object|number|Array>} data
 	     * @param {Array.<string>} [nameList]
 	     * @param {Function} [dimValueGetter] (dataItem, dimName, dataIndex, dimIndex) => number
@@ -19228,7 +19228,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var dimStore = targetStorage[dimension];
 	        var len = this.count();
-	        // Copy data from original data
+	        // Copy data form original data
 	        for (var i = 0; i < storage[dimension].length; i++) {
 	            targetStorage[dimension][i] = storage[dimension][i];
 	        }
@@ -19625,7 +19625,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var zrUtil = __webpack_require__(3);
 
 	    /**
-	     * Complete the dimensions array guessed from the data structure.
+	     * Complete the dimensions array guessed form the data structure.
 	     * @param  {Array.<string>} dimensions      Necessary dimensions, like ['x', 'y']
 	     * @param  {Array} data                     Data list. [[1, 2, 3], [2, 3, 4]]
 	     * @param  {Array.<string>} defaultNames    Default names to fill not necessary dimensions, like ['value']
@@ -21893,7 +21893,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * Update cartesian properties from series
+	     * Update cartesian properties form series
 	     * @param  {module:echarts/model/Option} option
 	     * @private
 	     */
@@ -22094,7 +22094,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @param {module:echarts/model/Model} model
-	     * @param {string} [axisType] Default retrieve from model.type
+	     * @param {string} [axisType] Default retrieve form model.type
 	     * @return {module:echarts/scale/*}
 	     */
 	    axisHelper.createScaleByModel = function(model, axisType) {
@@ -22379,7 +22379,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * Set extent from data
+	     * Set extent form data
 	     * @param {Array.<number>} other
 	     */
 	    scaleProto.unionExtent = function (other) {
@@ -22768,7 +22768,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        };
 	    });
 
-	    // Steps from d3
+	    // Steps form d3
 	    var scaleLevels = [
 	        // Format       step    interval
 	        ['hh:mm:ss',    1,      1000],           // 1s
@@ -24261,10 +24261,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var PI = Math.PI;
 
 	    /**
-	     * A final axis is translated and rotated from a "standard axis".
+	     * A final axis is translated and rotated form a "standard axis".
 	     * So opt.position and opt.rotation is required.
 	     *
-	     * A standard axis is and axis from [0, 0] to [0, axisExtent[1]],
+	     * A standard axis is and axis form [0, 0] to [0, axisExtent[1]],
 	     * for example: (0, 0) ------------> (0, 50)
 	     *
 	     * nameDirection or tickDirection or labelDirection is 1 means tick
@@ -24291,10 +24291,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {number} [opt.tickDirection=1] 1 or -1
 	     * @param {number} [opt.labelDirection=1] 1 or -1
 	     * @param {number} [opt.labelOffset=0] Usefull when onZero.
-	     * @param {string} [opt.axisName] default get from axisModel.
-	     * @param {number} [opt.labelRotation] by degree, default get from axisModel.
+	     * @param {string} [opt.axisName] default get form axisModel.
+	     * @param {number} [opt.labelRotation] by degree, default get form axisModel.
 	     * @param {number} [opt.labelInterval] Default label interval when label
-	     *                                     interval from model is null or 'auto'.
+	     *                                     interval form model is null or 'auto'.
 	     * @param {number} [opt.strokeContainThreshold] Default label interval when label
 	     * @param {number} [opt.silent=true]
 	     */
@@ -24536,7 +24536,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var axisModel = this.axisModel;
 
 	            var name = this.opt.axisName;
-	            // If name is '', do not get name from axisMode.
+	            // If name is '', do not get name form axisMode.
 	            if (name == null) {
 	                name = axisModel.get('name');
 	            }
@@ -25936,7 +25936,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 137 */
 /***/ function(module, exports) {
 
-	// Pick color from palette for each data item
+	// Pick color form palette for each data item
 
 
 	    module.exports = function (seriesType, ecModel) {
@@ -27780,7 +27780,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        getRawValue: function (dataIndex) {
-	            // Use value stored in data instead because it is calculated from multiple series
+	            // Use value stored in data instead because it is calculated form multiple series
 	            // FIXME Provide all value of multiple series ?
 	            return this._data.get('value', dataIndex);
 	        },
@@ -27900,7 +27900,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        type: 'map',
 
 	        render: function (mapModel, ecModel, api, payload) {
-	            // Not render if it is an toggleSelect action from self
+	            // Not render if it is an toggleSelect action form self
 	            if (payload && payload.type === 'mapToggleSelect'
 	                && payload.from === this.uid
 	            ) {
@@ -27909,7 +27909,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            var group = this.group;
 	            group.removeAll();
-	            // Not update map if it is an roam action from self
+	            // Not update map if it is an roam action form self
 	            if (!(payload && payload.type === 'geoRoam'
 	                && payload.component === 'series'
 	                && payload.name === mapModel.name)) {
@@ -28255,7 +28255,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var geo = mapOrGeoModel.coordinateSystem;
 	            var controller = this._controller;
 	            controller.zoomLimit = mapOrGeoModel.get('scaleLimit');
-	            // Update zoom from model
+	            // Update zoom form model
 	            controller.zoom = mapOrGeoModel.get('roamDetail.zoom');
 	            // roamType is will be set default true if it is null
 	            controller.enable(mapOrGeoModel.get('roam') || false);
@@ -28624,7 +28624,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var roamHelper = {};
 
 	    /**
-	     * Calculate pan and zoom which from roamDetail model
+	     * Calculate pan and zoom which form roamDetail model
 	     * @param {module:echarts/model/Model} roamDetailModel
 	     * @param {Object} payload
 	     * @param {Object} [zoomLimit]
@@ -29637,7 +29637,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Update transform from roam and mapLocation
+	         * Update transform form roam and mapLocation
 	         * @private
 	         */
 	        _updateTransform: function () {
@@ -30118,8 +30118,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                // (order by desc default, asc not supported yet (strange effect))
 	            clipWindow: 'origin',               // Size of clipped window when zooming. 'origin' or 'fullscreen'
 	            squareRatio: 0.5 * (1 + Math.sqrt(5)), // golden ratio
-	            leafDepth: null,                    // Nodes on depth from root are regarded as leaves.
-	                                                // Count from zero (zero represents only view root).
+	            leafDepth: null,                    // Nodes on depth form root are regarded as leaves.
+	                                                // Count form zero (zero represents only view root).
 	            visualDimension: 0,                 // Can be 0, 1, 2, 3.
 	            zoomToNodeRatio: 0.32 * 0.32,       // Be effective when using zoomToNode. Specify the proportion of the
 	                                                // target node area in the view area.
@@ -31001,7 +31001,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return helper.aboveViewRootByViewPath(viewPath, node);
 	        },
 
-	        // viewPath should obtained from getPathToRoot(viewRoot)
+	        // viewPath should obtained form getPathToRoot(viewRoot)
 	        aboveViewRootByViewPath: function (viewPath, node) {
 	            var index = zrUtil.indexOf(viewPath, node);
 	            // The last one is viewRoot
@@ -31177,8 +31177,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            // Notice: when thisTree and oldTree are the same tree (see list.cloneShadow),
 	            // the oldTree is actually losted, so we can not find all of the old graphic
-	            // elements from tree. So we use this stragegy: make element storage, move
-	            // from old storage to new storage, clear old storage.
+	            // elements form tree. So we use this stragegy: make element storage, move
+	            // form old storage to new storage, clear old storage.
 
 	            dualTravel(
 	                thisTree.root ? [thisTree.root] : [],
@@ -31235,7 +31235,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        || (viewPathIndex < viewPath.length && viewPath[viewPathIndex] !== thisNode)
 	                    ) {
 	                        // Deleting nodes will be performed finally. This method just find
-	                        // element from old storage, or create new element, set them to new
+	                        // element form old storage, or create new element, set them to new
 	                        // storage, and set styles.
 	                        return;
 	                    }
@@ -31377,7 +31377,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var lasts = lastsForAnimation[storageName];
 
 	                if (element) {
-	                    // Remove from oldStorage
+	                    // Remove form oldStorage
 	                    oldStorage[storageName][oldRawIndex] = null;
 	                    prepareAnimationWhenHasOld(lasts, element, storageName);
 	                }
@@ -31414,7 +31414,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    if (parentNode && (!reRoot || reRoot.direction === 'drilldown')) {
 	                        var parentOldX = 0;
 	                        var parentOldY = 0;
-	                        // For convenience, get old bounding rect from background.
+	                        // For convenience, get old bounding rect form background.
 	                        var parentOldBg = lastsForAnimation.background[parentNode.getRawIndex()];
 
 	                        if (parentOldBg && parentOldBg.old) {
@@ -31647,7 +31647,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                );
 	                var layoutInfo = this.seriesModel.layoutInfo;
 
-	                // Transform mouse coord from global to containerGroup.
+	                // Transform mouse coord form global to containerGroup.
 	                mouseX -= layoutInfo.x;
 	                mouseY -= layoutInfo.y;
 
@@ -32349,7 +32349,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // So we separate 'colorRange' and 'color' to different attributes.
 	    function getRangeVisual(nodeModel, name) {
 	        // 'colorRange', 'colorARange', 'colorSRange'.
-	        // If not exsits on this node, fetch from levels and series.
+	        // If not exsits on this node, fetch form levels and series.
 	        var range = nodeModel.get(name);
 	        return (isArray(range) && range.length) ? {name: name, range: range} : null;
 	    }
@@ -33203,7 +33203,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var len = orderedChildren.length;
 	        var deletePoint = len;
 
-	        // Always travel from little value to big value.
+	        // Always travel form little value to big value.
 	        for (var i = len - 1; i >= 0; i--) {
 	            var value = orderedChildren[
 	                orderBy === 'asc' ? len - i - 1 : i
@@ -33312,7 +33312,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // it is horizontal subdivision,
 	        // rowFixedLength is the width of the subdivision,
 	        // rowOtherLength is the height of the subdivision,
-	        // and nodes will be positioned from left to right.
+	        // and nodes will be positioned form left to right.
 
 	        // wh[idx0WhenH] means: when horizontal,
 	        //      wh[idx0WhenH] => wh[0] => 'width'.
@@ -33421,7 +33421,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return defaultPosition;
 	        }
 
-	        // Transform coord from local to container.
+	        // Transform coord form local to container.
 	        var targetCenter = [layout.width / 2, layout.height / 2];
 	        var node = targetNode;
 	        while (node) {
@@ -35292,7 +35292,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        for (var i = 0; i < nodes.length; i++) {
 	            var n = nodes[i];
 	            if (!n.p) {
-	                // Use the position from first adjecent node with defined position
+	                // Use the position form first adjecent node with defined position
 	                // Or use a random position
 	                // From d3
 	                // if (n.edges) {
@@ -36776,7 +36776,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Update properties from series
+	         * Update properties form series
 	         * @private
 	         */
 	        _updateAxesFromSeries: function (parallelModel, ecModel) {
@@ -37564,7 +37564,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            this._disabled = false;
 
-	            // Remove from old container.
+	            // Remove form old container.
 	            removeGroup.call(this);
 
 	            // boundingRect will change when dragging, so we have
@@ -37857,7 +37857,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * Merge aixs definition from parallel option (if exists) to axis option.
+	     * Merge aixs definition form parallel option (if exists) to axis option.
 	     * @inner
 	     */
 	    function mergeAxisOptionFromParallel(option) {
@@ -39585,7 +39585,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            data.setVisual({
 	                legendSymbol: 'roundRect',
 	                // Use name 'color' but not 'borderColor' for legend usage and
-	                // visual coding from other component like dataRange.
+	                // visual coding form other component like dataRange.
 	                color: seriesModel.get(borderColorQuery) || defaulColor
 	            });
 
@@ -41503,7 +41503,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @event legendToggleSelect
 	     * @type {Object}
 	     * @property {string} type 'legendToggleSelect'
-	     * @property {string} [from]
+	     * @property {string} [form]
 	     * @property {string} name Series name or data item name
 	     */
 	    echarts.registerAction(
@@ -46599,7 +46599,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            InsideZoomView.superApply(this, 'render', arguments);
 
 	            // Notice: origin this._range should be maintained, and should not be re-fetched
-	            // from dataZoomModel when payload.type is 'dataZoom', otherwise 'pan' or 'zoom'
+	            // form dataZoomModel when payload.type is 'dataZoom', otherwise 'pan' or 'zoom'
 	            // info will be missed because of 'throttle' of this.dispatchAction.
 	            if (roams.shouldRecordRange(payload, dataZoomModel.id)) {
 	                this._range = dataZoomModel.getPercentRange();
@@ -46994,7 +46994,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        ecModel.eachComponent('dataZoom', function (dataZoomModel) {
 	            // Fullfill all of the range props so that user
-	            // is able to get them from chart.getOption().
+	            // is able to get them form chart.getOption().
 	            var axisProxy = dataZoomModel.findRepresentativeAxisProxy();
 	            var percentRange = axisProxy.getDataPercentWindow();
 	            var valueRange = axisProxy.getDataValueWindow();
@@ -48702,7 +48702,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * this._pieceList:
 	         *     The order is always [low, ..., high].
 	         *
-	         * Mapping from location to low-high:
+	         * Mapping form location to low-high:
 	         *     If !option.inverse
 	         *     When vertical, top is high.
 	         *     When horizontal, right is high.
@@ -49881,10 +49881,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            zrUtil.extend({}, item[2])
 	        ];
 
-	        // Avoid line data type is extended by from(to) data type
+	        // Avoid line data type is extended by form(to) data type
 	        item[2].type = item[2].type || '';
 
-	        // Merge from option and to option into line option
+	        // Merge form option and to option into line option
 	        zrUtil.merge(item[2], item[0]);
 	        zrUtil.merge(item[2], item[1]);
 
@@ -50005,7 +50005,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    var mlData = mlModel.getData();
 	                    var fromData = mlModel.__from;
 	                    var toData = mlModel.__to;
-	                    // Update visual and layout of from symbol and to symbol
+	                    // Update visual and layout of form symbol and to symbol
 	                    fromData.each(function (idx) {
 	                        var lineModel = mlData.getItemModel(idx);
 	                        var mlType = lineModel.get('type');
@@ -50059,7 +50059,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                symbolSize = [symbolSize, symbolSize];
 	            }
 
-	            // Update visual and layout of from symbol and to symbol
+	            // Update visual and layout of form symbol and to symbol
 	            mlData.from.each(function (idx) {
 	                var lineModel = lineData.getItemModel(idx);
 	                var mlType = lineModel.get('type');
@@ -53338,7 +53338,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // TODO pattern
 	        var fill = style.fill;
 	        if (fill != null) {
-	            // Modified from excanvas
+	            // Modified form excanvas
 	            if (fill instanceof Gradient) {
 	                var gradientType;
 	                var angle = 0;
@@ -53440,7 +53440,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 	            }
 	            else {
-	                // FIXME Change from Gradient fill to color fill
+	                // FIXME Change form Gradient fill to color fill
 	                setColorAndOpacity(el, fill, style.opacity);
 	            }
 	        }
@@ -53563,7 +53563,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    var sy = 1;
 	                    var angle = 0;
 	                    if (m) {
-	                        // Extract SRT from matrix
+	                        // Extract SRT form matrix
 	                        x = m[4];
 	                        y = m[5];
 	                        sx = sqrt(m[0] * m[0] + m[1] * m[1]);
@@ -54418,7 +54418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 
 	            if (this._firstPaint) {
-	                // Detached from document at first time
+	                // Detached form document at first time
 	                // to avoid page refreshing too many times
 
 	                // FIXME 如果每次都先 removeChild 可能会导致一些填充和描边的效果改变

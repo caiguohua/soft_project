@@ -8,9 +8,9 @@
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     </resultMap>
     <insert id="insertData" parameterType="com.net.soft.model.ClubLabelDO">
-        insert into club_label (name)
+        insert into club_label (label_name)
         values
-        (#{record.name})
+        (#{record.labelName})
     </insert>
     <update id="updateData" parameterType="com.net.soft.model.ClubLabelDO">
         update club_label

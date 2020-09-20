@@ -1,6 +1,7 @@
 package com.net.soft.model;
 
 import lombok.Data;
+import lombok.Getter;
 
 import java.util.Date;
 

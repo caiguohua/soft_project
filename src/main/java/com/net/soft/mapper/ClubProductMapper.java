@@ -50,6 +50,13 @@ public interface ClubProductMapper {
      */
     ClubProductDO findById(Integer id);
 
+    /**
+     * 取消订单的商品数量加1
+     * @param id
+     * @param sum
+     */
+    void addSum(@Param("id") Integer id,@Param("sum") Integer sum);
+
     //ydj
 
 }

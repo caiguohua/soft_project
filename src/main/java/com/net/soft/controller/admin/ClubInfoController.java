@@ -2,13 +2,11 @@ package com.net.soft.controller.admin;
 
 import com.github.pagehelper.PageInfo;
 import com.net.soft.exception.SoftException;
-import com.net.soft.from.ClubInfoForm;
+import com.net.soft.form.ClubInfoForm;
 import com.net.soft.model.ClubInfoDO;
 import com.net.soft.service.ClubInfoService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -2,7 +2,6 @@ package com.net.soft.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.net.soft.exception.SoftException;
-import com.net.soft.mapper.ClubCommentsMapper;
 import com.net.soft.mapper.OrderInfoMapper;
 import com.net.soft.model.ClubProductDO;
 import com.net.soft.model.OrderInfoDO;
@@ -10,6 +9,8 @@ import com.net.soft.model.UserInfoDO;
 import com.net.soft.service.ClubProductService;
 import com.net.soft.service.OrderInfoService;
 import com.net.soft.service.UserInfoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,7 @@ import java.util.List;
  */
 @Service
 public class OrderInfoServiceImpl implements OrderInfoService {
+    private final Logger logger = LoggerFactory.getLogger(OrderInfoServiceImpl.class);
 
     private final UserInfoService userInfoService;
     private final ClubProductService clubProductService;
@@ -52,7 +54,7 @@ public class OrderInfoServiceImpl implements OrderInfoService {
         try {
             orderInfoMapper.finishOrder(id);
         }catch (SoftException e){
-
+            logger.error("完结订单失败！订单id:"+id);
         }
     }
 
@@ -70,14 +72,15 @@ public class OrderInfoServiceImpl implements OrderInfoService {
     public void cancelOrder(Integer id) {
         try {
             orderInfoMapper.cancelOrder(id);
+            Integer pid = orderInfoMapper.findPidById(id);
+            clubProductService.addSum(pid);
         }catch (SoftException e){
-//            throw new ModelAndViewDefiningException()
         }
     }
 
     @Override
     public Integer findStatus(Integer id) {
-        return orderInfoMapper.findById(id);
+        return orderInfoMapper.findStatusById(id);
     }
 
     /**
@@ -87,7 +90,14 @@ public class OrderInfoServiceImpl implements OrderInfoService {
      * @return
      */
     @Override
-    public Integer createOrder(Integer uid, Integer pid) {
+    public Boolean createOrder(Integer uid, Integer pid) {
+        Integer type = userInfoService.findOne(uid).getType();
+        if(type == 0){
+            Integer num = orderInfoMapper.findNumByUid(uid);
+            if(num > 3){
+                return false;
+            }
+        }
         ClubProductDO clubProductDO = clubProductService.findById(pid);
         if (clubProductDO.getSum() > 0) {
             //库存-1
@@ -107,8 +117,8 @@ public class OrderInfoServiceImpl implements OrderInfoService {
             orderInfoDO.setProductPrice(clubProductDO.getPrice());
             orderInfoDO.setDateUnit(clubProductDO.getDateUnit());
             orderInfoMapper.insert(orderInfoDO);
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 }

@@ -15,5 +15,5 @@ public interface OrderInfoService {
     List<OrderInfoDO> findAll(Integer page,Integer size);
     void cancelOrder(Integer id);
     Integer findStatus(Integer id);
-    Integer createOrder(Integer uid,Integer pid);
+    Boolean createOrder(Integer uid,Integer pid);
 }

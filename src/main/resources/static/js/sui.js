@@ -1240,9 +1240,9 @@
 },{}],5:[function(require,module,exports){
 /*jshint sub:true*/
 /*
- * js come from :bootstrap-datepicker.js
+ * js come form :bootstrap-datepicker.js
  * Started by Stefan Petre; improvements by Andrew Rowls + contributors
- * you con get the source from github: https://github.com/eternicode/bootstrap-datepicker
+ * you con get the source form github: https://github.com/eternicode/bootstrap-datepicker
  */
 ! function($, undefined) {
 
@@ -2107,7 +2107,7 @@
 							ws = new Date(+prevMonth + (this.o.weekStart - prevMonth.getUTCDay() - 7) % 7 * 864e5),
 							// Thursday of this week
 							th = new Date(Number(ws) + (7 + 4 - ws.getUTCDay()) % 7 * 864e5),
-							// First Thursday of year, year from thursday
+							// First Thursday of year, year form thursday
 							yth = new Date(Number(yth = UTCDate(th.getUTCFullYear(), 0, 1)) + (7 + 4 - yth.getUTCDay()) % 7 * 864e5),
 							// Calendar week: ms between thursdays, div ms per day, div 7 days
 							calWeek = (th - yth) / 864e5 / 7 + 1;
@@ -2675,7 +2675,7 @@
 	};
 
 	function opts_from_el(el, prefix) {
-		// Derive options from element data-attrs
+		// Derive options form element data-attrs
 		var data = $(el).data(),
 			out = {},
 			inkey,
@@ -2694,7 +2694,7 @@
 	}
 
 	function opts_from_locale(lang) {
-		// Derive options from locale plugins
+		// Derive options form locale plugins
 		var out = {};
 		// Check if "de-DE" style date is available, if not language should
 		// fallback to 2 letter code eg "de"
@@ -3217,7 +3217,7 @@
       return options = $.extend({}, IntroJs.prototype.defaults, options);
   }
   /**
-   * Initiate a new introduction/guide from an element in the page
+   * Initiate a new introduction/guide form an element in the page
    *
    * @api private
    * @method _introForElement
@@ -3238,7 +3238,7 @@
         currentItem.step = introItems.length + 1;
         //use querySelector function only when developer used CSS selector
         if (typeof(currentItem.element) === 'string') {
-          //grab the element with given selector from the page
+          //grab the element with given selector form the page
           currentItem.element = document.querySelector(currentItem.element);
         }
 
@@ -3263,7 +3263,7 @@
       }
 
     } else {
-       //use steps from data-* annotations
+       //use steps form data-* annotations
       allIntroSteps = targetElm.querySelectorAll('*[data-intro]');
       //if there's no element to intro
       if (allIntroSteps.length < 1) {
@@ -3465,14 +3465,14 @@
   }
 
   /**
-   * Exit from intro
+   * Exit form intro
    *
    * @api private
    * @method _exitIntro
    * @param {Object} targetElement
    */
   function _exitIntro(targetElement) {
-    //remove overlay layer from the page
+    //remove overlay layer form the page
     var overlayLayer = targetElement.querySelector('.sui-introjs-overlay');
 
     //return if intro already completed or skipped
@@ -3500,13 +3500,13 @@
       floatingElement.parentNode.removeChild(floatingElement);
     }
 
-    //remove `introjs-showElement` class from the element
+    //remove `introjs-showElement` class form the element
     var showElement = document.querySelector('.introjs-showElement');
     if (showElement) {
       showElement.className = showElement.className.replace(/introjs-[a-zA-Z]+/g, '').replace(/^\s+|\s+$/g, ''); // This is a manual trim.
     }
 
-    //remove `introjs-fixParent` class from the elements
+    //remove `introjs-fixParent` class form the elements
     var fixParents = document.querySelectorAll('.introjs-fixParent');
     if (fixParents && fixParents.length > 0) {
       for (var i = fixParents.length - 1; i >= 0; i--) {
@@ -3694,7 +3694,7 @@
       //set new position to helper layer
       _setHelperLayerPosition.call(self, oldHelperLayer);
 
-      //remove `introjs-fixParent` class from the elements
+      //remove `introjs-fixParent` class form the elements
       var fixParents = document.querySelectorAll('.introjs-fixParent');
       if (fixParents && fixParents.length > 0) {
         for (var i = fixParents.length - 1; i >= 0; i--) {
@@ -3903,11 +3903,11 @@
 
       //Scroll up
       if (top < 0 || targetElement.element.clientHeight > winHeight) {
-        window.scrollBy(0, top - 30); // 30px padding from edge to look nice
+        window.scrollBy(0, top - 30); // 30px padding form edge to look nice
 
       //Scroll down
       } else {
-        window.scrollBy(0, bottom + 100); // 70px + 30px padding from edge to look nice
+        window.scrollBy(0, bottom + 100); // 70px + 30px padding form edge to look nice
       }
     }
 
@@ -5038,7 +5038,7 @@ require('./template')
     '`': '&#x60;'
   };
 
-  // Functions for escaping and unescaping strings to/from HTML interpolation.
+  // Functions for escaping and unescaping strings to/form HTML interpolation.
   var createEscaper = function(map) {
     var escaper = function(match) {
       return map[match];

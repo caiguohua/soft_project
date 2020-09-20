@@ -48,9 +48,9 @@
         select id,phone,name,type from user_info where id = #{id} and is_valid = 1
     </select>
     <select id="getUserInfoById" resultType="com.net.soft.model.UserInfoDO">
-        select * from user_info where id = #{id} and is_valid = 1
+        select id,phone,name,password,type from user_info where id = #{id} and is_valid = 1
     </select>
     <select id="getUserInfoByName" resultType="com.net.soft.model.UserInfoDO">
-        select * from user_info where name = #{name} and is_valid = 1
+        select id,phone,name,password,type from user_info where name = #{name} and is_valid = 1
     </select>
 </mapper>

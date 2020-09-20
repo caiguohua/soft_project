@@ -3,7 +3,7 @@ package com.net.soft.controller.admin;
 import com.github.pagehelper.PageInfo;
 import com.net.soft.converter.ClubProductDOtoProductDTOConverter;
 import com.net.soft.exception.SoftException;
-import com.net.soft.from.ClubProductForm;
+import com.net.soft.form.ClubProductForm;
 import com.net.soft.model.ClubProductDO;
 import com.net.soft.model.dto.ProductDTO;
 import com.net.soft.service.ClubProductService;

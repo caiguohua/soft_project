@@ -18,6 +18,10 @@
         (#{record.cid},#{record.name},#{record.desc},#{record.price},#{record.dateUnit},#{record.sum})
     </insert>
 
+    <update id="addSum" parameterType="java.lang.Integer">
+        update club_product set p_sum = #{sum} where id = #{id} and is_valid = 1;
+    </update>
+
     <update id="updateData" parameterType="com.net.soft.model.ClubProductDO">
         update club_product
         <set>

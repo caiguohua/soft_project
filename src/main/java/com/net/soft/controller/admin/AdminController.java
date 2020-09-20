@@ -1,6 +1,6 @@
 package com.net.soft.controller.admin;
 
-import com.net.soft.from.UserInfoForm;
+import com.net.soft.form.UserInfoForm;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
@@ -60,6 +60,6 @@ public class AdminController {
 
     @GetMapping("/userIndex")
     public ModelAndView userIndex(Map<String, Object> map) {
-        return new ModelAndView("user/index", map);
+        return new ModelAndView("index.html", map);
     }
 }
